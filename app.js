@@ -170,77 +170,7 @@
   }
 
   /* ---------------------------------------------------------
-     7. Demo de carga diferida (lazy loading) en la app
-     --------------------------------------------------------- */
-  const appLista = $("#appLista");
-  const appContador = $("#appContador");
-  const appPie = $("#appPie");
-  const miniaturas = $$(".miniatura");
-  let cargadas = 0;
-
-  function actualizarContador() {
-    if (appContador) appContador.textContent = `${cargadas} / ${miniaturas.length} cargadas`;
-    if (appPie && cargadas === miniaturas.length) {
-      appPie.textContent = "Todas las alertas visibles sin recargar la lista.";
-    }
-  }
-
-  function cargarVideo(boton) {
-    if (boton.classList.contains("cargando") || boton.classList.contains("listo")) return;
-
-    boton.classList.add("cargando");
-    const etiqueta = $(".miniatura__carga", boton);
-    const barra = $(".barra i", boton);
-    let progreso = 0;
-
-    const paso = () => {
-      progreso += Math.floor(Math.random() * 18) + 9;
-      if (progreso >= 100) {
-        progreso = 100;
-        if (barra) barra.style.width = "100%";
-        if (etiqueta) etiqueta.textContent = "Video listo";
-        boton.classList.remove("cargando");
-        boton.classList.add("listo");
-        boton.setAttribute("aria-label", `Video de ${boton.dataset.carga} cargado`);
-        cargadas++;
-        actualizarContador();
-        return;
-      }
-      if (barra) barra.style.width = `${progreso}%`;
-      if (etiqueta) etiqueta.textContent = `Cargando ${progreso}%…`;
-      setTimeout(paso, reducirMovimiento ? 10 : 130);
-    };
-
-    setTimeout(paso, reducirMovimiento ? 0 : 220);
-  }
-
-  if (appLista) {
-    appLista.addEventListener("click", (e) => {
-      const boton = e.target.closest(".miniatura");
-      if (boton) cargarVideo(boton);
-    });
-
-    // La primera alerta se precarga sola cuando el bloque entra en pantalla
-    // (así el usuario entiende el flujo sin tener que tocar nada).
-    if ("IntersectionObserver" in window && !reducirMovimiento) {
-      const demoObs = new IntersectionObserver(
-        (entradas, obs) => {
-          entradas.forEach((entrada) => {
-            if (entrada.isIntersecting) {
-              cargarVideo(miniaturas[0]);
-              obs.disconnect();
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
-      demoObs.observe(appLista);
-    }
-    actualizarContador();
-  }
-
-  /* ---------------------------------------------------------
-     8. Contadores animados de métricas
+     7. Contadores animados de métricas
      --------------------------------------------------------- */
   const contadores = $$("[data-contador]");
   const formatoNum = new Intl.NumberFormat("es-BO");
@@ -287,7 +217,7 @@
   }
 
   /* ---------------------------------------------------------
-     9. Formulario de demo (validación + éxito)
+     8. Formulario de demo (validación + éxito)
      --------------------------------------------------------- */
   const form = $("#formDemo");
   const exito = $("#exitoForm");
@@ -373,13 +303,13 @@
   }
 
   /* ---------------------------------------------------------
-     10. Detalles de marca / año
+     9. Detalles de marca / año
      --------------------------------------------------------- */
   const anio = $("#anio");
   if (anio) anio.textContent = new Date().getFullYear();
 
   /* ---------------------------------------------------------
-     11. Modal del Business Model Canvas
+     10. Modal del Business Model Canvas
      --------------------------------------------------------- */
   const bmcModal = $("#bmcModal");
   const abrirBmc = ["#abrirBmcPanel", "#abrirBmcNav", "#abrirBmcMovil"]

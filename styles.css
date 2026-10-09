@@ -825,13 +825,6 @@ ul, ol { margin: 0; padding: 0; }
   color: var(--verde-vivo);
 }
 
-.demoApp__ayuda {
-  margin-top: 18px;
-  font-size: 0.85rem !important;
-  color: var(--aviso) !important;
-  font-weight: 600;
-}
-
 .celular {
   position: relative;
   width: min(330px, 100%);
@@ -952,16 +945,6 @@ ul, ol { margin: 0; padding: 0; }
   font-size: 0.9rem;
 }
 
-.app__contador {
-  font-size: 0.7rem;
-  font-weight: 700;
-  background: var(--verde-menta);
-  color: var(--verde-oscuro);
-  padding: 4px 9px;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-
 .app__lista {
   list-style: none;
   display: grid;
@@ -981,62 +964,14 @@ ul, ol { margin: 0; padding: 0; }
 
 .miniatura {
   position: relative;
+  display: block;
   height: 62px;
   width: 100%;
-  border: none;
   border-radius: 9px;
+  overflow: hidden;
   background:
     linear-gradient(135deg, rgba(15, 81, 50, 0.85), rgba(22, 163, 74, 0.55)),
     repeating-linear-gradient(45deg, #3f3f46 0 8px, #52525b 8px 16px);
-  color: var(--blanco);
-  font-family: inherit;
-  cursor: pointer;
-  overflow: hidden;
-  padding: 0;
-  transition: transform var(--transicion), box-shadow var(--transicion);
-}
-
-.miniatura:hover { transform: scale(1.03); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); }
-
-.miniatura > span {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 6px;
-  font-size: 0.6rem;
-  font-weight: 700;
-  text-align: center;
-  transition: opacity 0.3s ease;
-}
-
-.miniatura__carga,
-.miniatura__lista { opacity: 0; pointer-events: none; }
-
-.miniatura.cargando .miniatura__base,
-.miniatura.listo .miniatura__base { opacity: 0; }
-
-.miniatura.cargando::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(100deg, transparent 32%, rgba(255, 255, 255, 0.3) 50%, transparent 68%);
-  animation: brilloMiniatura 1.1s linear infinite;
-}
-
-@keyframes brilloMiniatura {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(100%); }
-}
-
-.miniatura.cargando .miniatura__carga { opacity: 1; }
-
-.miniatura.listo .miniatura__lista { opacity: 1; }
-
-.miniatura.listo {
-  background:
-    linear-gradient(135deg, rgba(15, 81, 50, 0.35), rgba(22, 163, 74, 0.15)),
-    linear-gradient(160deg, #a7d7b0 0%, #6bbf7b 45%, #3f7d4d 100%);
 }
 
 .miniatura__img {
@@ -1045,47 +980,22 @@ ul, ol { margin: 0; padding: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.35s ease;
 }
 
-.miniatura.listo .miniatura__img { opacity: 1; }
-
-.miniatura__lista em,
-.miniatura__lista .barra {
-  position: relative;
+.miniatura__etiqueta {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
-}
-
-.miniatura__lista {
-  align-content: center;
-  gap: 5px;
-}
-
-.miniatura__lista em {
   font-style: normal;
   font-size: 0.56rem;
+  font-weight: 700;
+  color: var(--blanco);
   background: rgba(0, 0, 0, 0.55);
   padding: 2px 5px;
   border-radius: 5px;
-}
-
-.barra {
-  display: block;
-  width: 74%;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 99px;
-  overflow: hidden;
-}
-
-.barra i {
-  display: block;
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--verde-vivo), #a7f3d0);
-  border-radius: 99px;
-  transition: width 0.15s linear;
+  white-space: nowrap;
 }
 
 .app__meta {
@@ -1102,13 +1012,6 @@ ul, ol { margin: 0; padding: 0; }
 .app__meta span {
   font-size: 0.66rem;
   color: var(--gris-claro);
-}
-
-.app__pie {
-  margin: 12px 6px 0;
-  font-size: 0.68rem !important;
-  color: var(--gris) !important;
-  text-align: center;
 }
 
 /* ---------- 8b. Maqueta del panel web ---------- */

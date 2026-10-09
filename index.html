@@ -219,7 +219,7 @@
             <ul class="lista lista--si lista--compacta">
               <li>Alertas de inactividad prolongada</li>
               <li>Detección de caídas y cojeras</li>
-              <li>Seguimiento individual por número de animal</li>
+              <li>Seguimiento individual de cada animal</li>
             </ul>
           </article>
 
@@ -263,7 +263,7 @@
           </article>
         </div>
 
-        <!-- Demo de carga diferida -->
+        <!-- Mockup estático de la app móvil -->
         <div class="demoApp" data-reveal>
           <div class="demoApp__texto">
             <span class="etiqueta etiqueta--clara">Carga diferida en acción</span>
@@ -278,10 +278,9 @@
               <li>El video se descarga por fragmentos, bajo demanda</li>
               <li>La app nunca se congela esperando contenido pesado</li>
             </ul>
-            <p class="demoApp__ayuda">Toca las miniaturas para simular la descarga diferida ↓</p>
           </div>
 
-          <div class="celular" role="group" aria-label="Demostración de la app móvil con carga diferida">
+          <div class="celular" role="group" aria-label="Vista de la app móvil con alertas">
             <div class="celular__tapa" aria-hidden="true"></div>
             <div class="celular__pantalla">
               <div class="app__estado" aria-hidden="true">
@@ -308,20 +307,14 @@
 
               <div class="app__barra">
                 <strong>Alertas · Hoy</strong>
-                <span class="app__contador" id="appContador">0 / 4 cargadas</span>
               </div>
 
-              <ul class="app__lista" id="appLista">
+              <ul class="app__lista">
                 <li class="app__item">
-                  <button class="miniatura" data-carga="Corral 03 · Vaca #247" type="button">
-                    <span class="miniatura__base">▶ Miniatura ligera</span>
-                    <span class="miniatura__carga">Cargando 0%…</span>
-                    <span class="miniatura__lista">
-                      <img class="miniatura__img" src="assets/img/alerta-01.jpg" alt="" width="440" height="293" loading="lazy" decoding="async" />
-                      <span class="barra"><i></i></span>
-                      <em>Corral 03 · Vaca #247</em>
-                    </span>
-                  </button>
+                  <span class="miniatura">
+                    <img class="miniatura__img" src="assets/img/alerta-01.jpg" alt="Alerta de cojera detectada en Corral 03" width="440" height="293" loading="lazy" decoding="async" />
+                    <em class="miniatura__etiqueta">Corral 03</em>
+                  </span>
                   <div class="app__meta">
                     <strong>Cojera detectada</strong>
                     <span>Hoy 06:42 · Prioridad alta</span>
@@ -329,15 +322,10 @@
                 </li>
 
                 <li class="app__item">
-                  <button class="miniatura" data-carga="Corral 01 · Vaca #118" type="button">
-                    <span class="miniatura__base">▶ Miniatura ligera</span>
-                    <span class="miniatura__carga">Cargando 0%…</span>
-                    <span class="miniatura__lista">
-                      <img class="miniatura__img" src="assets/img/alerta-02.jpg" alt="" width="440" height="293" loading="lazy" decoding="async" />
-                      <span class="barra"><i></i></span>
-                      <em>Corral 01 · Vaca #118</em>
-                    </span>
-                  </button>
+                  <span class="miniatura">
+                    <img class="miniatura__img" src="assets/img/alerta-02.jpg" alt="Alerta de inactividad en Corral 01" width="440" height="293" loading="lazy" decoding="async" />
+                    <em class="miniatura__etiqueta">Corral 01</em>
+                  </span>
                   <div class="app__meta">
                     <strong>Inactividad 45 min</strong>
                     <span>Hoy 05:10 · Prioridad media</span>
@@ -345,15 +333,10 @@
                 </li>
 
                 <li class="app__item">
-                  <button class="miniatura" data-carga="Corral 03 · Vaca #305" type="button">
-                    <span class="miniatura__base">▶ Miniatura ligera</span>
-                    <span class="miniatura__carga">Cargando 0%…</span>
-                    <span class="miniatura__lista">
-                      <img class="miniatura__img" src="assets/img/alerta-03.jpg" alt="" width="440" height="293" loading="lazy" decoding="async" />
-                      <span class="barra"><i></i></span>
-                      <em>Corral 03 · Vaca #305</em>
-                    </span>
-                  </button>
+                  <span class="miniatura">
+                    <img class="miniatura__img" src="assets/img/alerta-03.jpg" alt="Alerta de caída en el Corral 03" width="440" height="293" loading="lazy" decoding="async" />
+                    <em class="miniatura__etiqueta">Corral 03</em>
+                  </span>
                   <div class="app__meta">
                     <strong>Caída en el corral</strong>
                     <span>Hoy 03:27 · Prioridad alta</span>
@@ -361,23 +344,16 @@
                 </li>
 
                 <li class="app__item">
-                  <button class="miniatura" data-carga="Corral 02 · Vaca #092" type="button">
-                    <span class="miniatura__base">▶ Miniatura ligera</span>
-                    <span class="miniatura__carga">Cargando 0%…</span>
-                    <span class="miniatura__lista">
-                      <img class="miniatura__img" src="assets/img/alerta-04.jpg" alt="" width="440" height="293" loading="lazy" decoding="async" />
-                      <span class="barra"><i></i></span>
-                      <em>Corral 02 · Vaca #092</em>
-                    </span>
-                  </button>
+                  <span class="miniatura">
+                    <img class="miniatura__img" src="assets/img/alerta-04.jpg" alt="Alerta de comportamiento anómalo en Corral 02" width="440" height="293" loading="lazy" decoding="async" />
+                    <em class="miniatura__etiqueta">Corral 02</em>
+                  </span>
                   <div class="app__meta">
                     <strong>Comportamiento anómalo</strong>
                     <span>Ayer 19:54 · Prioridad baja</span>
                   </div>
                 </li>
               </ul>
-
-              <p class="app__pie" id="appPie">Los videos pesados se descargan solo al tocarlos.</p>
             </div>
             <span class="celular__home" aria-hidden="true"></span>
           </div>
@@ -446,7 +422,7 @@
                       <img src="assets/img/alerta-01.jpg" alt="" width="56" height="38" loading="lazy" decoding="async" />
                       <span class="panel__detalle">
                         <strong>Cojera detectada</strong>
-                        <em>Corral 03 · Vaca #247</em>
+                        <em>Corral 03</em>
                       </span>
                       <span class="panel__estado panel__estado--alta">Alta</span>
                       <span class="panel__hora">06:42</span>
@@ -455,7 +431,7 @@
                       <img src="assets/img/alerta-02.jpg" alt="" width="56" height="38" loading="lazy" decoding="async" />
                       <span class="panel__detalle">
                         <strong>Inactividad 45 min</strong>
-                        <em>Corral 01 · Vaca #118</em>
+                        <em>Corral 01</em>
                       </span>
                       <span class="panel__estado panel__estado--media">Media</span>
                       <span class="panel__hora">05:10</span>
@@ -464,7 +440,7 @@
                       <img src="assets/img/alerta-03.jpg" alt="" width="56" height="38" loading="lazy" decoding="async" />
                       <span class="panel__detalle">
                         <strong>Caída en el corral</strong>
-                        <em>Corral 03 · Vaca #305</em>
+                        <em>Corral 03</em>
                       </span>
                       <span class="panel__estado panel__estado--alta">Alta</span>
                       <span class="panel__hora">03:27</span>
@@ -473,7 +449,7 @@
                       <img src="assets/img/alerta-04.jpg" alt="" width="56" height="38" loading="lazy" decoding="async" />
                       <span class="panel__detalle">
                         <strong>Comportamiento anómalo</strong>
-                        <em>Corral 02 · Vaca #092</em>
+                        <em>Corral 02</em>
                       </span>
                       <span class="panel__estado panel__estado--baja">Baja</span>
                       <span class="panel__hora">Ayer 19:54</span>
@@ -595,7 +571,7 @@
               </svg>
             </span>
             <h3>El capataz recibe la alerta exacta</h3>
-            <p>Notificación en el celular con corral, número de animal y video listo para abrir con carga diferida.</p>
+            <p>Notificación en el celular con corral y video listo para abrir con carga diferida.</p>
           </li>
         </ol>
       </div>

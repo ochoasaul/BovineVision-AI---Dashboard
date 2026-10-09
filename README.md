@@ -16,14 +16,14 @@ no hay conexión).
 projecto_materia_MOd3/
 ├── index.html        → estructura semántica de la landing
 ├── styles.css        → estilos mobile-first con variables CSS
-├── app.js            → interactividad (menú, scroll, lazy load, formulario, video)
+├── app.js            → interactividad (menú, scroll, contadores, formulario, video)
 ├── README.md         → este archivo
 └── assets/
     ├── logo/logo.jpeg           → logo de la marca (vaca con circuitos) en el navbar
     ├── video/corral-03.mp4      → loop del corral para la tarjeta "En vivo" (720p, ~3,6 MB)
     └── img/
         ├── hero-poster.jpg      → foto de respaldo del video (~96 KB)
-        └── alerta-01…04.jpg     → miniaturas reales de la demo (22–60 KB c/u)
+        └── alerta-01…04.jpg     → fotos de alerta del mockup de celular (22–60 KB c/u)
 ```
 
 ---
@@ -50,7 +50,7 @@ Luego entra a 👉 [http://localhost:8080](http://localhost:8080)
    CTA primario, **video real del corral** con foto de respaldo y **foto de fondo con fallback**.
 3. **El Problema** — pérdidas por detección manual tardía + contraste microchips vs. monitoreo visual.
 4. **Solución** — grid de 3 columnas (IA 24/7, App con Carga Diferida, Historial y Reportes)
-   + demo interactiva de *lazy loading* en un mockup de celular
+   + **mockup estático** de la app móvil con las imágenes de alerta directas (sin interacción)
    + **maqueta estática del panel web** en una ventana de navegador (KPIs, gráfico y tabla de alertas).
 5. **Beneficios** — métricas con contadores animados + beneficios clave.
 6. **Cómo Funciona** — 3 pasos: cámaras → IA en la nube → alerta en el celular.
@@ -74,8 +74,8 @@ Las cifras de la página son datos reales, citados en pantalla (bloque `.fuente`
 | Subestimación visual de cojeras: 17–30 % | Dolecheck & Bewley, 2018 · AHDB, 2023 · Anagnostopoulos et al., 2013 |
 
 > El formulario de demo, el correo `hola@bovisense.bo`, el nombre de empresa y el teléfono
-> del pie son **datos ficticios de demostración académica**. La demo de *carga diferida* es
-> una **simulación** con miniaturas locales: no descarga archivos reales.
+> del pie son **datos ficticios de demostración académica**. El mockup del celular es una
+> **maqueta estática**: muestra las fotos de alerta locales, no descarga archivos reales.
 
 ---
 
@@ -86,7 +86,7 @@ Las cifras de la página son datos reales, citados en pantalla (bloque `.fuente`
 | Menú móvil | Hamburguesa animada, cierra al navegar o con `Esc`, bloquea el scroll |
 | Navbar | Sombra al hacer scroll + scrollspy que resalta la sección activa |
 | Scroll reveal | Animaciones suaves con `IntersectionObserver` (respeta `prefers-reduced-motion`) |
-| Lazy loading | Miniaturas de alerta que simulan descarga diferida con barra de progreso |
+| Mockup celular | Vista estática de la app con las imágenes de alerta directas (sin interacción) |
 | Contadores | Números animados al entrar en pantalla, con formato `es-BO` (ej. `859.442`) |
 | Formulario | Validación de nombre, estancia y teléfono (formato Bolivia) + mensaje de éxito |
 | Foto hero | Carga progresiva con fallback al gradiente si no hay conexión |
@@ -110,7 +110,7 @@ Las cifras de la página son datos reales, citados en pantalla (bloque `.fuente`
 
 Todo se sirve desde el propio proyecto (sin CDNs de terceros), salvo la foto de fondo del hero
 y Google Fonts. Videos/fotos descargados en tamaño reducido: 720p para el loop y `w=400` para
-las miniaturas, de modo que la demo de "carga ligera" siga siendo honesta.
+las fotos de alerta, así la página sigue liviana en conexiones débiles.
 
 ---
 
