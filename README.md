@@ -44,13 +44,14 @@ Luego entra a 👉 [http://localhost:8080](http://localhost:8080)
 
 ## 🧭 Secciones de la página
 
-1. **Navbar** fija con logo (marcador de posición), enlaces a *El Problema*, *Solución*,
+1. **Navbar** fija con logo de la marca, enlaces a *El Problema*, *Solución*,
    *Beneficios*, *Cómo Funciona* y botón destacado **Solicitar Demo** (menú hamburguesa en móvil).
 2. **Hero** — titular sobre salvar la rentabilidad, subtítulo con IA + carga diferida,
-   CTA primario, ilustración SVG de cámara/vaca con detección de IA y **foto de fondo con fallback**.
+   CTA primario, **video real del corral** con foto de respaldo y **foto de fondo con fallback**.
 3. **El Problema** — pérdidas por detección manual tardía + contraste microchips vs. monitoreo visual.
 4. **Solución** — grid de 3 columnas (IA 24/7, App con Carga Diferida, Historial y Reportes)
-   + demo interactiva de *lazy loading* en un mockup de celular.
+   + demo interactiva de *lazy loading* en un mockup de celular
+   + **maqueta estática del panel web** en una ventana de navegador (KPIs, gráfico y tabla de alertas).
 5. **Beneficios** — métricas con contadores animados + beneficios clave.
 6. **Cómo Funciona** — 3 pasos: cámaras → IA en la nube → alerta en el celular.
 7. **El Sector en Cifras** — cifras reales del ganado boliviano con su fuente y respaldo
@@ -90,6 +91,7 @@ Las cifras de la página son datos reales, citados en pantalla (bloque `.fuente`
 | Formulario | Validación de nombre, estancia y teléfono (formato Bolivia) + mensaje de éxito |
 | Foto hero | Carga progresiva con fallback al gradiente si no hay conexión |
 | Cámara en vivo | Video real del corral en loop; se pausa fuera de pantalla y con `prefers-reduced-motion` |
+| Maqueta panel web | Mockup estático del panel de escritorio (sin interacción, solo `data-reveal`) |
 
 ---
 

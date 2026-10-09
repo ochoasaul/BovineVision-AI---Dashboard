@@ -1108,6 +1108,258 @@ ul, ol { margin: 0; padding: 0; }
   text-align: center;
 }
 
+/* ---------- 8b. Maqueta del panel web ---------- */
+.demoWeb {
+  display: grid;
+  gap: 34px;
+  margin-top: 34px;
+  background: var(--tinta);
+  color: #d6d3d1;
+  border-radius: 26px;
+  padding: 34px 22px;
+  box-shadow: var(--sombra-alta);
+}
+
+.demoWeb h3 { color: var(--blanco); }
+.demoWeb p { font-size: 0.96rem; }
+
+.demoWeb .lista li { color: rgba(255, 255, 255, 0.85); }
+.demoWeb .lista--si li::before {
+  background: rgba(34, 197, 94, 0.22);
+  color: var(--verde-vivo);
+}
+
+.demoWeb__ayuda {
+  margin-top: 18px;
+  font-size: 0.85rem !important;
+  color: var(--aviso) !important;
+  font-weight: 600;
+}
+
+.navegador {
+  width: min(720px, 100%);
+  margin-inline: auto;
+  background: #0c0a09;
+  border: 1px solid #292524;
+  border-radius: 16px;
+  padding: 10px 10px 12px;
+  box-shadow:
+    0 26px 60px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 2px #1c1917;
+  overflow: hidden;
+}
+
+.navegador__barra {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 4px 10px;
+}
+
+.navegador__puntos {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.navegador__puntos i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.navegador__puntos i:nth-child(1) { background: #ef4444; }
+.navegador__puntos i:nth-child(2) { background: #f59e0b; }
+.navegador__puntos i:nth-child(3) { background: #22c55e; }
+
+.navegador__url {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #1c1917;
+  color: var(--gris-claro);
+  font-size: 0.68rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navegador__pantalla {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--arena);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(28, 25, 23, 0.12);
+}
+
+.panel__lateral {
+  display: none;
+}
+
+.panel__marca {
+  display: block;
+  font-family: var(--fuente-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--blanco);
+  margin-bottom: 10px;
+}
+
+.panel__marca em {
+  font-style: normal;
+  color: var(--verde-vivo);
+}
+
+.panel__nav {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gris-claro);
+  padding: 6px 9px;
+  border-radius: 7px;
+}
+
+.panel__nav--activo {
+  background: rgba(34, 197, 94, 0.16);
+  color: var(--verde-vivo);
+}
+
+.panel {
+  display: grid;
+  gap: 14px;
+  padding: 16px 14px;
+}
+
+.panel__kpi {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+}
+
+.kpi {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 9px 12px;
+}
+
+.kpi strong {
+  font-family: var(--fuente-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--verde-oscuro);
+}
+
+.kpi span {
+  font-size: 0.7rem;
+  color: var(--gris);
+}
+
+.panel__bloque {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.panel__titulo {
+  display: block;
+  font-family: var(--fuente-display);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gris);
+  margin-bottom: 10px;
+}
+
+.panel__grafico {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.col--baja { fill: #86efac; }
+.col--media { fill: #22c55e; }
+.col--alta { fill: #16a34a; }
+
+.panel__tabla {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.panel__fila {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  grid-template-areas:
+    "foto detalle estado"
+    "foto hora hora";
+  gap: 2px 10px;
+  align-items: center;
+}
+
+.panel__fila img {
+  grid-area: foto;
+  width: 56px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--arena-oscuro);
+}
+
+.panel__detalle {
+  grid-area: detalle;
+  min-width: 0;
+}
+
+.panel__detalle strong {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--tinta);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.panel__detalle em {
+  display: block;
+  font-style: normal;
+  font-size: 0.64rem;
+  color: var(--gris);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.panel__estado {
+  grid-area: estado;
+  justify-self: end;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.panel__estado--alta { background: #fee2e2; color: #b91c1c; }
+.panel__estado--media { background: #fef3c7; color: #92400e; }
+.panel__estado--baja { background: var(--verde-menta); color: var(--verde-oscuro); }
+
+.panel__hora {
+  grid-area: hora;
+  font-size: 0.62rem;
+  color: var(--gris-claro);
+}
+
 /* ---------- 9. Beneficios ---------- */
 .metricas {
   display: grid;
@@ -1615,6 +1867,22 @@ ul, ol { margin: 0; padding: 0; }
   .beneficios { grid-template-columns: repeat(2, 1fr); }
   .hero__datos li { padding: 12px 18px; }
   .demoApp { padding: 40px 34px; }
+  .demoWeb { padding: 40px 34px; }
+  .panel__kpi { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .panel__fila {
+    grid-template-columns: 56px minmax(0, 1fr) auto auto;
+    grid-template-areas: "foto detalle estado hora";
+    gap: 10px;
+  }
+  .panel__hora { justify-self: end; }
+  .navegador__pantalla { grid-template-columns: 160px minmax(0, 1fr); }
+  .panel__lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 12px;
+    background: var(--tinta);
+  }
   .pie__interior { grid-template-columns: 1.4fr 1fr 1fr; }
   .pie__marca { grid-column: 1 / -1; }
   .pie__baseInterior { flex-direction: row; justify-content: space-between; text-align: left; }
@@ -1672,6 +1940,7 @@ ul, ol { margin: 0; padding: 0; }
 
   .metricas { grid-template-columns: repeat(4, 1fr); }
   .sector { grid-template-columns: repeat(4, 1fr); }
+  .demoWeb { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); align-items: center; gap: 44px; }
   .pie__interior { grid-template-columns: 1.6fr 1fr 1fr 1fr; }
   .pie__marca { grid-column: auto; }
 }

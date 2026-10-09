@@ -34,6 +34,10 @@
         <span class="nav__ctaLarga">Solicitar Demo</span>
       </a>
 
+      <a href="#demo" class="btn btn--primario nav__cta" aria-label="Solicitar demo">
+        <span class="nav__ctaCorta">BMC</span>
+      </a>
+
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navEnlaces">
         <span></span><span></span><span></span>
       </button>
@@ -376,6 +380,104 @@
               <p class="app__pie" id="appPie">Los videos pesados se descargan solo al tocarlos.</p>
             </div>
             <span class="celular__home" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <!-- Maquetado del panel web (vista escritorio) -->
+        <div class="demoWeb" id="panelweb" data-reveal data-delay="120">
+          <div class="demoWeb__texto">
+            <span class="etiqueta etiqueta--clara">Panel web</span>
+            <h3>El panel completo, desde la oficina</h3>
+            <p>
+              En escritorio el equipo administrativo abre el panel con el historial de todas las
+              alertas: filtros por estancia y corral, evolución semanal y reportes exportables
+              para el veterinario.
+            </p>
+            <ul class="lista lista--si">
+              <li>Historial completo por animal y por corral</li>
+              <li>Comparativa entre establecimientos</li>
+              <li>Reportes listos para descargar</li>
+            </ul>
+            <p class="demoWeb__ayuda">Maqueta de referencia · vista de escritorio</p>
+          </div>
+
+          <div class="navegador" role="img" aria-label="Maqueta del panel web de BovineVision AI en una ventana de navegador">
+            <div class="navegador__barra" aria-hidden="true">
+              <span class="navegador__puntos"><i></i><i></i><i></i></span>
+              <span class="navegador__url">panel.bovinevision.ai/alertas</span>
+            </div>
+            <div class="navegador__pantalla">
+              <nav class="panel__lateral" aria-hidden="true">
+                <strong class="panel__marca">BovineVision <em>AI</em></strong>
+                <span class="panel__nav panel__nav--activo">Alertas</span>
+                <span class="panel__nav">Animales</span>
+                <span class="panel__nav">Corrales</span>
+                <span class="panel__nav">Reportes</span>
+              </nav>
+
+              <div class="panel" aria-hidden="true">
+                <div class="panel__kpi">
+                  <div class="kpi"><strong>3</strong><span>Alertas hoy</span></div>
+                  <div class="kpi"><strong>4</strong><span>Corrales activos</span></div>
+                  <div class="kpi"><strong>6 min</strong><span>Respuesta promedio</span></div>
+                </div>
+
+                <div class="panel__bloque">
+                  <span class="panel__titulo">Alertas · últimos 7 días</span>
+                  <svg class="panel__grafico" viewBox="0 0 280 84" role="presentation">
+                    <rect x="6"   y="44" width="26" height="34" rx="4" class="col--baja" />
+                    <rect x="46"  y="30" width="26" height="48" rx="4" class="col--media" />
+                    <rect x="86"  y="52" width="26" height="26" rx="4" class="col--baja" />
+                    <rect x="126" y="18" width="26" height="60" rx="4" class="col--alta" />
+                    <rect x="166" y="38" width="26" height="40" rx="4" class="col--media" />
+                    <rect x="206" y="10" width="26" height="68" rx="4" class="col--alta" />
+                    <rect x="246" y="48" width="26" height="30" rx="4" class="col--media" />
+                  </svg>
+                </div>
+
+                <div class="panel__bloque">
+                  <span class="panel__titulo">Alertas recientes</span>
+                  <ul class="panel__tabla">
+                    <li class="panel__fila">
+                      <img src="assets/img/alerta-01.jpg" alt="" width="56" height="38" loading="lazy" decoding="async" />
+                      <span class="panel__detalle">
+                        <strong>Cojera detectada</strong>
+                        <em>Corral 03 · Vaca #247</em>
+                      </span>
+                      <span class="panel__estado panel__estado--alta">Alta</span>
+                      <span class="panel__hora">06:42</span>
+                    </li>
+                    <li class="panel__fila">
+                      <img src="assets/img/alerta-02.jpg" alt="" width="56" height="38" loading="lazy" decoding="async" />
+                      <span class="panel__detalle">
+                        <strong>Inactividad 45 min</strong>
+                        <em>Corral 01 · Vaca #118</em>
+                      </span>
+                      <span class="panel__estado panel__estado--media">Media</span>
+                      <span class="panel__hora">05:10</span>
+                    </li>
+                    <li class="panel__fila">
+                      <img src="assets/img/alerta-03.jpg" alt="" width="56" height="38" loading="lazy" decoding="async" />
+                      <span class="panel__detalle">
+                        <strong>Caída en el corral</strong>
+                        <em>Corral 03 · Vaca #305</em>
+                      </span>
+                      <span class="panel__estado panel__estado--alta">Alta</span>
+                      <span class="panel__hora">03:27</span>
+                    </li>
+                    <li class="panel__fila">
+                      <img src="assets/img/alerta-04.jpg" alt="" width="56" height="38" loading="lazy" decoding="async" />
+                      <span class="panel__detalle">
+                        <strong>Comportamiento anómalo</strong>
+                        <em>Corral 02 · Vaca #092</em>
+                      </span>
+                      <span class="panel__estado panel__estado--baja">Baja</span>
+                      <span class="panel__hora">Ayer 19:54</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
