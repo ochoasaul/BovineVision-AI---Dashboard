@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BovineVision AI — Monitoreo inteligente de ganado con IA | Santa Cruz, Bolivia</title>
+  <meta name="description" content="BovineVision AI usa inteligencia artificial y visión por computadora para detectar cojeras, caídas y enfermedades en tu ganado 24/7. App con carga diferida optimizada para el campo." />
+  <meta name="theme-color" content="#0f5132" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f5132'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%234ade80' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%234ade80'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================ NAVBAR ============================ -->
+  <header class="nav" id="nav">
+    <div class="contenedor nav__interior">
+      <a href="#inicio" class="logo" aria-label="BovineVision AI — Inicio">
+        <img class="logo__img" src="assets/logo/logo.jpeg" alt="" width="34" height="34" />
+        <span class="logo__texto">BovineVision <em>AI</em></span>
+      </a>
+
+      <nav class="nav__enlaces" id="navEnlaces" aria-label="Navegación principal">
+        <a href="#problema" class="nav__link">El Problema</a>
+        <a href="#solucion" class="nav__link">Solución</a>
+        <a href="#beneficios" class="nav__link">Beneficios</a>
+        <a href="#como-funciona" class="nav__link">Cómo Funciona</a>
+      </nav>
+
+      <a href="#demo" class="btn btn--primario nav__cta" aria-label="Solicitar demo">
+        <span class="nav__ctaCorta">Demo</span>
+        <span class="nav__ctaLarga">Solicitar Demo</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navEnlaces">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="inicio">
+      <div class="hero__fondo" aria-hidden="true">
+        <div class="hero__gradiente"></div>
+        <img
+          class="hero__foto"
+          id="heroFoto"
+          src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1600&q=70"
+          alt=""
+          referrerpolicy="no-referrer"
+          decoding="async"
+        />
+        <div class="hero__patron"></div>
+      </div>
+
+      <div class="contenedor hero__interior">
+        <div class="hero__contenido" data-reveal>
+          <span class="etiqueta">AgTech · Santa Cruz, Bolivia</span>
+          <h1 class="hero__titulo">
+            Cada vaca detectada a tiempo es
+            <span class="resaltado">rentabilidad que se salva</span>.
+          </h1>
+          <p class="hero__sub">
+            La IA de <strong>BovineVision AI</strong> vigila el comportamiento de tu ganado 24/7 con visión por computadora
+            y envía las alertas en video a la app de tu capataz con <strong>carga diferida</strong>: sin agotar
+            los datos, la memoria ni la batería en pleno campo.
+          </p>
+
+          <div class="hero__acciones">
+            <a href="#demo" class="btn btn--primario btn--grande">Solicitar Demo Gratuita</a>
+            <a href="#como-funciona" class="btn btn--fantasma btn--grande">Ver cómo funciona</a>
+          </div>
+
+          <ul class="hero__datos">
+            <li><strong>24/7</strong><span>Monitoreo continuo</span></li>
+            <li><strong>0</strong><span>Microchips por animal</span></li>
+            <li><strong>1</strong><span>Cámara por corral</span></li>
+          </ul>        </div>
+
+        <!-- Cámara en vivo: video del corral -->
+        <div class="hero__visual" data-reveal data-delay="180">
+          <div class="camara">
+            <div class="camara__cabecera">
+              <span class="camara__punto"></span>
+              <span>Corral 03 · En vivo</span>
+              <span class="camara__hora" id="reloj">--:--:--</span>
+            </div>
+
+            <div class="camara__escena">
+              <video
+                class="escena__video"
+                src="assets/video/corral-03.mp4"
+                poster="assets/img/hero-poster.jpg"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                disablepictureinpicture
+                aria-label="Video del corral 03 bajo monitoreo de la cámara"
+              ></video>
+            </div>
+          </div>
+
+          <div class="hero__aviso" data-reveal data-delay="400">
+            <span class="hero__avisoIcono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+            </span>
+            <p><strong>Carga diferida activa:</strong> la lista de alertas carga primero, ligera. El video solo se descarga si el capataz lo toca.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#problema" class="hero__scroll" aria-label="Bajar al problema">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============================ PROBLEMA ============================ -->
+    <section class="seccion" id="problema">
+      <div class="contenedor">
+        <div class="seccion__cabecera" data-reveal>
+          <span class="etiqueta etiqueta--tierra">El Problema</span>
+          <h2>La detección manual llega tarde. <span class="resaltado">Y lo caro empieza ahí.</span></h2>
+          <p>
+            El capataz recorre el corral unas pocas veces al día. Una cojera, una infección o una caída que
+            nadie ve a tiempo se convierte en semanas de tratamiento, baja de peso, muerte del animal y
+            gasto veterinario que nunca estaba presupuestado.
+          </p>
+        </div>
+
+        <div class="datos" data-reveal>
+          <article class="dato">
+            <strong class="dato__num">337</strong>
+            <p>US$ cuesta en promedio un solo caso de cojera no tratado a tiempo.</p>
+            <small class="fuente">Fuente: Robcis et al. (2023), <em>Journal of Dairy Science</em>.</small>
+          </article>
+          <article class="dato">
+            <strong class="dato__num">30%</strong>
+            <p>De las cojeras se escapa a la primera inspección visual humana.</p>
+            <small class="fuente">Fuente: subestimación documentada del 17–30 % en la literatura revisada.</small>
+          </article>
+          <article class="dato">
+            <strong class="dato__num">24/7</strong>
+            <p>Lo que realmente necesitas vigilar… y lo que ningún ser humano puede hacer solo.</p>
+          </article>
+        </div>
+
+        <div class="contraste" data-reveal>
+          <article class="contraste__tarjeta contraste__tarjeta--no">
+            <h3>
+              <span class="contraste__marca" aria-hidden="true">✕</span>
+              Microchips individuales
+            </h3>
+            <p class="contraste__intro">Pensados para vacas lecheras de alto valor, no para el engorde.</p>
+            <ul class="lista lista--no">
+              <li>Costo por cada animal: escalan mal con cientos de cabezas.</li>
+              <li>Requieren instalación física y manejo del ganado.</li>
+              <li>Baterías, lectores y mantenimiento constante.</li>
+              <li>En engorde, el margen por animal no justifica el chip.</li>
+              <li>Miden al individuo, no ven lo que ocurre en el corral.</li>
+            </ul>
+          </article>
+
+          <article class="contraste__tarjeta contraste__tarjeta--si">
+            <span class="contraste__sello">Alternativa BovineVision AI</span>
+            <h3>
+              <span class="contraste__marca" aria-hidden="true">✓</span>
+              Monitoreo visual masivo
+            </h3>
+            <p class="contraste__intro">Una cámara cubre todo el corral. Cero dispositivos sobre el animal.</p>
+            <ul class="lista lista--si">
+              <li>Costo fijo por corral, sin importar el número de vacas.</li>
+              <li>Instalación mínima: no hay que inmovilizar al ganado.</li>
+              <li>Sin baterías ni sensores por animal que se pierdan.</li>
+              <li>Perfecto para producción de carne y grandes volúmenes.</li>
+              <li>Ve caídas, cojeras, peleas y minutos de inactividad.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ SOLUCIÓN ============================ -->
+    <section class="seccion seccion--arena" id="solucion">
+      <div class="contenedor">
+        <div class="seccion__cabecera" data-reveal>
+          <span class="etiqueta">La Solución</span>
+          <h2>Una plataforma híbrida: <span class="resaltado">IA en la nube + app para el campo</span></h2>
+          <p>
+            Las cámaras graban, la inteligencia artificial analiza y el equipo recibe solo lo importante.
+            Tres piezas que trabajan juntas para que nada se te pase por alto.
+          </p>
+        </div>
+
+        <div class="grid3">
+          <article class="ficha" data-reveal>
+            <span class="ficha__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </span>
+            <h3>Monitoreo IA 24/7</h3>
+            <p>
+              Visión por computadora que detecta tiempos de inactividad, caídas, cojeras y cambios de
+              comportamiento en cada animal del corral, de día y de noche.
+            </p>
+            <ul class="lista lista--si lista--compacta">
+              <li>Alertas de inactividad prolongada</li>
+              <li>Detección de caídas y cojeras</li>
+              <li>Seguimiento individual por número de animal</li>
+            </ul>
+          </article>
+
+          <article class="ficha ficha--destacada" data-reveal data-delay="120">
+            <span class="ficha__bandera">Innovación clave</span>
+            <span class="ficha__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="2" width="12" height="20" rx="3" />
+                <path d="M12 6v6l3 2" />
+                <path d="M9 18h6" />
+              </svg>
+            </span>
+            <h3>App con Carga Diferida</h3>
+            <p>
+              Diseñada para zonas rurales con mala conectividad: las alertas llegan primero en miniatura
+              ligera y el video se descarga solo cuando lo abres.
+            </p>
+            <ul class="lista lista--si lista--compacta">
+              <li>Sin gastar megas de más</li>
+              <li>Respeta la memoria y la batería</li>
+              <li>Funciona con señal intermitente</li>
+            </ul>
+          </article>
+
+          <article class="ficha" data-reveal data-delay="240">
+            <span class="ficha__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+              </svg>
+            </span>
+            <h3>Historial y Reportes</h3>
+            <p>
+              Panel administrativo web con el historial completo de alertas, exportación de reportes y
+              control total de todas tus estancias en un solo lugar.
+            </p>
+            <ul class="lista lista--si lista--compacta">
+              <li>Historial por animal y por corral</li>
+              <li>Reportes listos para el veterinario</li>
+              <li>Comparativa entre establecimientos</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Demo de carga diferida -->
+        <div class="demoApp" data-reveal>
+          <div class="demoApp__texto">
+            <span class="etiqueta etiqueta--clara">Carga diferida en acción</span>
+            <h3>Alertas ligeras primero, video después</h3>
+            <p>
+              Cada alerta aparece primero como una miniatura ligera. El clip completo se
+              descarga únicamente cuando el capataz toca el play. Así el equipo ve lo importante sin
+              bloquear la app ni quemar el plan de datos en el campo.
+            </p>
+            <ul class="lista lista--si">
+              <li>El listado carga aunque no haya señal estable</li>
+              <li>El video se descarga por fragmentos, bajo demanda</li>
+              <li>La app nunca se congela esperando contenido pesado</li>
+            </ul>
+            <p class="demoApp__ayuda">Toca las miniaturas para simular la descarga diferida ↓</p>
+          </div>
+
+          <div class="celular" role="group" aria-label="Demostración de la app móvil con carga diferida">
+            <div class="celular__tapa" aria-hidden="true"></div>
+            <div class="celular__pantalla">
+              <div class="app__estado" aria-hidden="true">
+                <span class="app__hora">06:42</span>
+                <span class="app__iconos">
+                  <svg viewBox="0 0 14 10" width="13" height="9" fill="currentColor">
+                    <rect x="0" y="7" width="2.5" height="3" rx="1" />
+                    <rect x="3.8" y="5" width="2.5" height="5" rx="1" />
+                    <rect x="7.6" y="2.5" width="2.5" height="7.5" rx="1" />
+                    <rect x="11.4" y="0" width="2.5" height="10" rx="1" />
+                  </svg>
+                  <svg viewBox="0 0 14 10" width="13" height="9" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+                    <path d="M1 3.6a9.2 9.2 0 0 1 12 0" />
+                    <path d="M3.3 6a5.8 5.8 0 0 1 7.4 0" />
+                    <path d="M7 9.4 5.4 7.8a2.3 2.3 0 0 1 3.2 0Z" fill="currentColor" stroke="none" />
+                  </svg>
+                  <svg viewBox="0 0 14 10" width="15" height="10" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <rect x="0.6" y="1.6" width="11" height="6.8" rx="2.2" />
+                    <rect x="2.1" y="3.1" width="7" height="3.8" rx="1" fill="currentColor" stroke="none" />
+                    <path d="M12.8 4.2v1.6" stroke-linecap="round" stroke-width="1.5" />
+                  </svg>
+                </span>
+              </div>
+
+              <div class="app__barra">
+                <strong>Alertas · Hoy</strong>
+                <span class="app__contador" id="appContador">0 / 4 cargadas</span>
+              </div>
+
+              <ul class="app__lista" id="appLista">
+                <li class="app__item">
+                  <button class="miniatura" data-carga="Corral 03 · Vaca #247" type="button">
+                    <span class="miniatura__base">▶ Miniatura ligera</span>
+                    <span class="miniatura__carga">Cargando 0%…</span>
+                    <span class="miniatura__lista">
+                      <img class="miniatura__img" src="assets/img/alerta-01.jpg" alt="" width="440" height="293" loading="lazy" decoding="async" />
+                      <span class="barra"><i></i></span>
+                      <em>Corral 03 · Vaca #247</em>
+                    </span>
+                  </button>
+                  <div class="app__meta">
+                    <strong>Cojera detectada</strong>
+                    <span>Hoy 06:42 · Prioridad alta</span>
+                  </div>
+                </li>
+
+                <li class="app__item">
+                  <button class="miniatura" data-carga="Corral 01 · Vaca #118" type="button">
+                    <span class="miniatura__base">▶ Miniatura ligera</span>
+                    <span class="miniatura__carga">Cargando 0%…</span>
+                    <span class="miniatura__lista">
+                      <img class="miniatura__img" src="assets/img/alerta-02.jpg" alt="" width="440" height="293" loading="lazy" decoding="async" />
+                      <span class="barra"><i></i></span>
+                      <em>Corral 01 · Vaca #118</em>
+                    </span>
+                  </button>
+                  <div class="app__meta">
+                    <strong>Inactividad 45 min</strong>
+                    <span>Hoy 05:10 · Prioridad media</span>
+                  </div>
+                </li>
+
+                <li class="app__item">
+                  <button class="miniatura" data-carga="Corral 03 · Vaca #305" type="button">
+                    <span class="miniatura__base">▶ Miniatura ligera</span>
+                    <span class="miniatura__carga">Cargando 0%…</span>
+                    <span class="miniatura__lista">
+                      <img class="miniatura__img" src="assets/img/alerta-03.jpg" alt="" width="440" height="293" loading="lazy" decoding="async" />
+                      <span class="barra"><i></i></span>
+                      <em>Corral 03 · Vaca #305</em>
+                    </span>
+                  </button>
+                  <div class="app__meta">
+                    <strong>Caída en el corral</strong>
+                    <span>Hoy 03:27 · Prioridad alta</span>
+                  </div>
+                </li>
+
+                <li class="app__item">
+                  <button class="miniatura" data-carga="Corral 02 · Vaca #092" type="button">
+                    <span class="miniatura__base">▶ Miniatura ligera</span>
+                    <span class="miniatura__carga">Cargando 0%…</span>
+                    <span class="miniatura__lista">
+                      <img class="miniatura__img" src="assets/img/alerta-04.jpg" alt="" width="440" height="293" loading="lazy" decoding="async" />
+                      <span class="barra"><i></i></span>
+                      <em>Corral 02 · Vaca #092</em>
+                    </span>
+                  </button>
+                  <div class="app__meta">
+                    <strong>Comportamiento anómalo</strong>
+                    <span>Ayer 19:54 · Prioridad baja</span>
+                  </div>
+                </li>
+              </ul>
+
+              <p class="app__pie" id="appPie">Los videos pesados se descargan solo al tocarlos.</p>
+            </div>
+            <span class="celular__home" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ BENEFICIOS ============================ -->
+    <section class="seccion" id="beneficios">
+      <div class="contenedor">
+        <div class="seccion__cabecera" data-reveal>
+          <span class="etiqueta">Beneficios</span>
+          <h2>Menos pérdidas, más control, <span class="resaltado">menos recorridos</span></h2>
+          <p>
+            BovineVision AI no reemplaza al capataz: le avisa a tiempo para que actúe. Eso se traduce
+            directo en la rentabilidad de la estancia.
+          </p>
+        </div>
+
+        <div class="metricas" data-reveal>
+          <div class="metrica">
+            <strong class="metrica__num" data-contador="0">0</strong>
+            <p>Chips, collares o baterías sobre el animal: cero manejo del ganado.</p>
+          </div>
+          <div class="metrica">
+            <strong class="metrica__num" data-contador="1">0</strong>
+            <p>Cámara por corral: cubre el lote completo sin importar cuántas vacas haya.</p>
+          </div>
+          <div class="metrica">
+            <strong class="metrica__num" data-contador="13">0</strong><span class="metrica__sufijo">,26</span>
+            <p>US$ de pérdida que evitas por cada semana de anticipación en el tratamiento. <small class="fuente">Robcis et al. (2023)</small></p>
+          </div>
+          <div class="metrica">
+            <strong class="metrica__num" data-contador="24">0</strong><span class="metrica__sufijo">/7</span>
+            <p>Vigilancia continua, también de noche y los feriados.</p>
+          </div>
+        </div>
+
+        <div class="beneficios">
+          <article class="beneficio" data-reveal>
+            <span class="beneficio__icono" aria-hidden="true">✓</span>
+            <div>
+              <h3>Proteges el peso y la vida del animal</h3>
+              <p>Tratar una cojera en las primeras horas evita que el animal deje de engordar o muera.</p>
+            </div>
+          </article>
+          <article class="beneficio" data-reveal data-delay="90">
+            <span class="beneficio__icono" aria-hidden="true">✓</span>
+            <div>
+              <h3>Ahorras en personal y traslados</h3>
+              <p>El equipo revisa alertas desde el celular en lugar de recorrer cada corral sin saber qué buscar.</p>
+            </div>
+          </article>
+          <article class="beneficio" data-reveal data-delay="180">
+            <span class="beneficio__icono" aria-hidden="true">✓</span>
+            <div>
+              <h3>Funciona donde hay mala señal</h3>
+              <p>La carga diferida permite operar en zonas rurales con conectividad intermitente sin frustración.</p>
+            </div>
+          </article>
+          <article class="beneficio" data-reveal data-delay="270">
+            <span class="beneficio__icono" aria-hidden="true">✓</span>
+            <div>
+              <h3>Decisiones con datos, no con memoria</h3>
+              <p>Historial, reportes y comparativas para el propietario, el administrador y el veterinario.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CÓMO FUNCIONA ============================ -->
+    <section class="seccion seccion--oscura" id="como-funciona">
+      <div class="contenedor">
+        <div class="seccion__cabecera seccion__cabecera--clara" data-reveal>
+          <span class="etiqueta etiqueta--clara">Cómo Funciona</span>
+          <h2>Tres pasos. <span class="resaltado">Cero complejidad.</span></h2>
+          <p>Desde la instalación hasta la alerta en el celular de tu capataz.</p>
+        </div>
+
+        <ol class="pasos">
+          <li class="paso" data-reveal>
+            <span class="paso__num">1</span>
+            <span class="paso__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h2L9 4h6l1.5 2h2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z" />
+                <circle cx="12" cy="13" r="3.6" />
+              </svg>
+            </span>
+            <h3>Las cámaras graban el corral</h3>
+            <p>Instalamos cámaras resistentes que cubren todo el lote. Sin chips, sin collares, sin tocar al ganado.</p>
+          </li>
+
+          <li class="paso" data-reveal data-delay="140">
+            <span class="paso__num">2</span>
+            <span class="paso__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 18a4.5 4.5 0 0 1-.4-9A6 6 0 0 1 18 9.5a4.2 4.2 0 0 1-.6 8.5z" />
+                <path d="M12 12v6M9.5 15.5 12 18l2.5-2.5" />
+              </svg>
+            </span>
+            <h3>La IA analiza en la nube</h3>
+            <p>El modelo compara cada animal con su propio historial y detecta inactividad, caídas y cojeras.</p>
+          </li>
+
+          <li class="paso" data-reveal data-delay="280">
+            <span class="paso__num">3</span>
+            <span class="paso__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="2" width="12" height="20" rx="3" />
+                <path d="M10.5 18h3" />
+                <path d="M12 6.5v4l2.5 1.5" />
+              </svg>
+            </span>
+            <h3>El capataz recibe la alerta exacta</h3>
+            <p>Notificación en el celular con corral, número de animal y video listo para abrir con carga diferida.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================ EL SECTOR EN CIFRAS ============================ -->
+    <section class="seccion seccion--arena" id="sector">
+      <div class="contenedor">
+        <div class="seccion__cabecera" data-reveal>
+          <span class="etiqueta etiqueta--tierra">El sector en cifras</span>
+          <h2>Por qué esto importa <span class="resaltado">en Santa Cruz</span></h2>
+          <p>
+            Detrás de cada alerta hay un volumen real de producción que no se puede revisar a pie.
+            Estas cifras no son promesas: son datos públicos del sector.
+          </p>
+        </div>
+
+        <div class="sector" data-reveal>
+          <div class="sector__cifra">
+            <div class="sector__valor">
+              <strong class="sector__num" data-contador="66">0</strong><span class="sector__sufijo">,8 %</span>
+            </div>
+            <p>de la carne bovina de Bolivia se produce en Santa Cruz.</p>
+            <small class="fuente">Fuente: INE, Anuario Estadístico 2023.</small>
+          </div>
+
+          <div class="sector__cifra">
+            <div class="sector__valor">
+              <strong class="sector__num" data-contador="859442">0</strong>
+            </div>
+            <p>cabezas de Santa Cruz con destino a matadero en 2024.</p>
+            <small class="fuente">Fuente: SENASAG / Paititi 2024.</small>
+          </div>
+
+          <div class="sector__cifra">
+            <div class="sector__valor">
+              <strong class="sector__num" data-contador="43">0</strong><span class="sector__sufijo">,1 %</span>
+            </div>
+            <p>del hato nacional está en Santa Cruz: 4.010.258 cabezas.</p>
+            <small class="fuente">Fuente: INE.</small>
+          </div>
+
+          <div class="sector__cifra">
+            <div class="sector__valor">
+              <strong class="sector__num" data-contador="1159211">0</strong>
+            </div>
+            <p>cabezas faenadas en Bolivia durante 2023.</p>
+            <small class="fuente">Fuente: INE, 2023.</small>
+          </div>
+        </div>
+
+        <p class="sector__respaldo" data-reveal>
+          <strong>Respaldado por literatura técnica:</strong>
+          Robcis et al. (2023), <em>Journal of Dairy Science</em> · Dolecheck &amp; Bewley (2018) ·
+          AHDB, <em>Costs of lameness</em> (2023) · Anagnostopoulos et al. (2013), validación de
+          detección de cojeras por visión artificial.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ CTA / DEMO ============================ -->
+    <section class="seccion" id="demo">
+      <div class="contenedor">
+        <div class="cta" data-reveal>
+          <div class="cta__info">
+            <span class="etiqueta etiqueta--clara">Prueba piloto</span>
+            <h2>Agenda una prueba piloto en tu estancia</h2>
+            <p>
+              Déjanos tus datos y te contactamos para instalar un corral en modo prueba y mostrarte las
+              alertas reales de tu ganado durante toda la prueba piloto.
+            </p>
+            <ul class="lista lista--si lista--clara">
+              <li>Sin costo durante la prueba piloto</li>
+              <li>Instalación y capacitación incluidas</li>
+              <li>Atención en Santa Cruz y alrededores</li>
+            </ul>
+            <p class="cta__contacto">
+              ¿Prefieres escribirnos? <a href="mailto:hola@bovisense.bo">hola@bovisense.bo</a>
+            </p>
+          </div>
+
+          <div class="cta__form">
+            <form id="formDemo" novalidate>
+              <div class="campo">
+                <label for="nombre">Nombre y apellido</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" autocomplete="name" />
+                <small class="campo__error" data-error-for="nombre"></small>
+              </div>
+
+              <div class="campo">
+                <label for="estancia">Estancia</label>
+                <input type="text" id="estancia" name="estancia" placeholder="Ej. Estancia La Fortuna" autocomplete="organization" />
+                <small class="campo__error" data-error-for="estancia"></small>
+              </div>
+
+              <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej. 7xxxxxx (Santa Cruz)" inputmode="tel" autocomplete="tel" />
+                <small class="campo__error" data-error-for="telefono"></small>
+              </div>
+
+              <button type="submit" class="btn btn--oscuro btn--grande btn--bloque">Agendar una prueba piloto</button>
+              <p class="cta__nota">Te respondemos a la brevedad para coordinar la visita. Tus datos no se comparten.</p>
+            </form>
+
+            <div class="exito" id="exitoForm" hidden>
+              <span class="exito__icono" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </span>
+              <h3>¡Solicitud enviada!</h3>
+              <p id="exitoTexto">Gracias. Muy pronto te contactaremos para coordinar la prueba piloto.</p>
+              <button type="button" class="btn btn--fantasma btn--claro" id="reiniciarForm">Enviar otra solicitud</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="pie">
+    <div class="contenedor pie__interior">
+      <div class="pie__marca">
+        <a href="#inicio" class="logo logo--claro">
+          <span class="logo__texto">BovineVision <em>AI</em></span>
+        </a>
+        <p>Monitoreo inteligente de ganado con IA y visión por computadora. Hecho para las estancias de Santa Cruz, Bolivia.</p>
+        <div class="redes" aria-label="Redes sociales">
+          <a href="#" class="red" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg>
+          </a>
+          <a href="#" class="red" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="red" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.9 8.5H4V20h2.9V8.5zM5.4 4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4zM20 13.6c0-3-1.6-4.4-3.8-4.4-1.7 0-2.5 1-2.9 1.6V8.5H10.5V20h2.9v-6.2c0-1.4.8-2.2 1.9-2.2s1.9.7 1.9 2.2V20H20v-6.4z"/></svg>
+          </a>
+          <a href="#" class="red" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.5 4h2.7l-5.9 6.8L21 20h-5.4l-4.2-5.5L6.5 20H3.8l6.3-7.2L3.5 4H9l3.8 5L17.5 4zm-1 14.4h1.5L8.1 5.5H6.5l10 12.9z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="pie__col" aria-label="Secciones">
+        <h4>Navegación</h4>
+        <a href="#problema">El Problema</a>
+        <a href="#solucion">Solución</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#como-funciona">Cómo Funciona</a>
+        <a href="#demo">Solicitar Demo</a>
+      </nav>
+
+      <nav class="pie__col" aria-label="Producto">
+        <h4>Producto</h4>
+        <a href="#solucion">Monitoreo IA 24/7</a>
+        <a href="#solucion">App con carga diferida</a>
+        <a href="#solucion">Historial y reportes</a>
+        <a href="#demo">Prueba piloto</a>
+      </nav>
+
+      <div class="pie__col">
+        <h4>Contacto</h4>
+        <a href="mailto:hola@bovisense.bo">hola@bovisense.bo</a>
+        <a href="tel:+59178907867">+591 78907867</a>
+        <span>Santa Cruz de la Sierra, Bolivia</span>
+      </div>
+    </div>
+
+    <div class="pie__base">
+      <div class="contenedor pie__baseInterior">
+        <p>© <span id="anio">2026</span> BovineVision AI · Todos los derechos reservados.</p>
+        <p class="pie__nota">Sitio demo con fines académicos · Nombre y datos ficticios.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
