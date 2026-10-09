@@ -377,4 +377,53 @@
      --------------------------------------------------------- */
   const anio = $("#anio");
   if (anio) anio.textContent = new Date().getFullYear();
+
+  /* ---------------------------------------------------------
+     11. Modal del Business Model Canvas
+     --------------------------------------------------------- */
+  const bmcModal = $("#bmcModal");
+  const abrirBmc = ["#abrirBmcPanel", "#abrirBmcNav", "#abrirBmcMovil"]
+    .map((id) => $(id))
+    .filter(Boolean);
+  const cerrarBmc = $("#cerrarBmc");
+  let bmcOrigen = null;
+
+  function abrirModalBmc(origen) {
+    if (!bmcModal || typeof bmcModal.showModal !== "function") return;
+    bmcOrigen = origen || null;
+    bmcModal.showModal();
+    document.body.style.overflow = "hidden";
+  }
+
+  function cerrarModalBmc() {
+    if (!bmcModal || !bmcModal.open) return;
+    bmcModal.close();
+  }
+
+  if (bmcModal) {
+    abrirBmc.forEach((btn) => {
+      btn.addEventListener("click", () => abrirModalBmc(btn));
+    });
+
+    if (cerrarBmc) cerrarBmc.addEventListener("click", cerrarModalBmc);
+
+    // Clic fuera del contenido = cerrar
+    bmcModal.addEventListener("click", (e) => {
+      const rect = bmcModal.getBoundingClientRect();
+      const dentro =
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom;
+      if (!dentro) cerrarModalBmc();
+    });
+
+    bmcModal.addEventListener("close", () => {
+      document.body.style.overflow = "";
+      if (bmcOrigen) {
+        bmcOrigen.focus();
+        bmcOrigen = null;
+      }
+    });
+  }
 })();

@@ -34,9 +34,9 @@
         <span class="nav__ctaLarga">Solicitar Demo</span>
       </a>
 
-      <a href="#demo" class="btn btn--primario nav__cta" aria-label="Solicitar demo">
+      <button type="button" class="btn btn--primario nav__cta nav__cta--bmc" id="abrirBmcNav" aria-haspopup="dialog">
         <span class="nav__ctaCorta">BMC</span>
-      </a>
+      </button>
 
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navEnlaces">
         <span></span><span></span><span></span>
@@ -399,20 +399,24 @@
               <li>Reportes listos para descargar</li>
             </ul>
             <p class="demoWeb__ayuda">Maqueta de referencia · vista de escritorio</p>
+            <button type="button" class="btn btn--fantasma btn--claro demoWeb__bmc" id="abrirBmcMovil" aria-haspopup="dialog">
+              Ver Business Model Canvas
+            </button>
           </div>
 
-          <div class="navegador" role="img" aria-label="Maqueta del panel web de BovineVision AI en una ventana de navegador">
+          <div class="navegador" aria-label="Maqueta del panel web de BovineVision AI en una ventana de navegador">
             <div class="navegador__barra" aria-hidden="true">
               <span class="navegador__puntos"><i></i><i></i><i></i></span>
               <span class="navegador__url">panel.bovinevision.ai/alertas</span>
             </div>
             <div class="navegador__pantalla">
-              <nav class="panel__lateral" aria-hidden="true">
+              <nav class="panel__lateral" aria-label="Secciones del panel">
                 <strong class="panel__marca">BovineVision <em>AI</em></strong>
                 <span class="panel__nav panel__nav--activo">Alertas</span>
                 <span class="panel__nav">Animales</span>
                 <span class="panel__nav">Corrales</span>
                 <span class="panel__nav">Reportes</span>
+                <button type="button" class="panel__bmc" id="abrirBmcPanel" aria-haspopup="dialog">BMC</button>
               </nav>
 
               <div class="panel" aria-hidden="true">
@@ -769,6 +773,112 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============================ MODAL BMC ============================ -->
+  <dialog class="bmc" id="bmcModal" aria-labelledby="bmcTitulo">
+    <div class="bmc__cabecera">
+      <div>
+        <span class="etiqueta etiqueta--clara">Modelo de negocio</span>
+        <h2 id="bmcTitulo">Business Model Canvas — BovineVision AI</h2>
+      </div>
+      <button type="button" class="bmc__cerrar" id="cerrarBmc" aria-label="Cerrar Business Model Canvas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="bmc__grid">
+      <section class="bmc__bloque">
+        <h3><span>1</span>Socios clave</h3>
+        <ul>
+          <li>Proveedores de cámaras IP y hardware de visión</li>
+          <li>Operadores de conectividad rural (4G/satélite)</li>
+          <li>Veterinarios y zootecnistas de la región</li>
+          <li>Distribuidores de insumos ganaderos</li>
+        </ul>
+      </section>
+
+      <section class="bmc__bloque">
+        <h3><span>2</span>Actividades clave</h3>
+        <ul>
+          <li>Entrenamiento de modelos de visión por computadora</li>
+          <li>Mantenimiento del panel y de la app móvil</li>
+          <li>Instalación y calibración de cámaras en campo</li>
+          <li>Soporte y onboarding al productor</li>
+        </ul>
+      </section>
+
+      <section class="bmc__bloque bmc__bloque--valor">
+        <h3><span>3</span>Propuesta de valor</h3>
+        <ul>
+          <li>Detección 24/7 de cojeras, caídas y comportamiento anómalo con IA</li>
+          <li>Alertas tempranas que reducen pérdidas por detección manual tardía</li>
+          <li>App ligera con carga diferida, pensada para conexiones débiles del campo</li>
+          <li>Historial y reportes exportables para el veterinario</li>
+        </ul>
+      </section>
+
+      <section class="bmc__bloque">
+        <h3><span>4</span>Relaciones con clientes</h3>
+        <ul>
+          <li>Demo y prueba piloto en la estancia</li>
+          <li>Soporte directo por teléfono y WhatsApp</li>
+          <li>Capacitación presencial del equipo de corral</li>
+        </ul>
+      </section>
+
+      <section class="bmc__bloque">
+        <h3><span>5</span>Segmentos de clientes</h3>
+        <ul>
+          <li>Estancias de cebe y engorde en Santa Cruz</li>
+          <li>Medianas y grandes operaciones ganaderas</li>
+          <li>Administradores y veterinarios de establecimiento</li>
+        </ul>
+      </section>
+
+      <section class="bmc__bloque">
+        <h3><span>6</span>Canales</h3>
+        <ul>
+          <li>Sitio web y solicitud de demo en línea</li>
+          <li>Visita técnica y demostración en campo</li>
+          <li>Redes sociales y referidos entre productores</li>
+        </ul>
+      </section>
+
+      <section class="bmc__bloque">
+        <h3><span>7</span>Estructura de costos</h3>
+        <ul>
+          <li>Hardware: cámaras, montaje y conectividad</li>
+          <li>Computación en la nube e inferencia de IA</li>
+          <li>Desarrollo de software y soporte técnico</li>
+        </ul>
+      </section>
+
+      <section class="bmc__bloque">
+        <h3><span>8</span>Fuentes de ingreso</h3>
+        <ul>
+          <li>Suscripción mensual por cámara o por lote de animales</li>
+          <li>Cargo único de instalación y puesta en marcha</li>
+          <li>Reportes y analítica avanzada (plan premium)</li>
+        </ul>
+      </section>
+
+      <section class="bmc__bloque">
+        <h3><span>9</span>Recursos clave</h3>
+        <ul>
+          <li>Modelos de IA entrenados sobre ganado bovino</li>
+          <li>Plataforma web + app con carga diferida</li>
+          <li>Equipo técnico y red de cámaras instaladas</li>
+        </ul>
+      </section>
+    </div>
+
+    <p class="bmc__nota">
+      Diagrama académico · nombre de empresa, precios y datos de negocio ficticios.
+      Las cifras del sector citadas en la landing sí son reales.
+    </p>
+  </dialog>
 
   <script src="app.js"></script>
 </body>

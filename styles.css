@@ -366,6 +366,9 @@ ul, ol { margin: 0; padding: 0; }
   font-size: 0.88rem;
 }
 
+/* En móvil el navbar ya lleva el CTA "Demo"; el BMC se abre desde la sección Solución */
+.nav__cta--bmc { display: none; }
+
 .nav__ctaLarga { display: none; }
 
 .nav__toggle {
@@ -1136,6 +1139,11 @@ ul, ol { margin: 0; padding: 0; }
   font-weight: 600;
 }
 
+.demoWeb__bmc {
+  display: none;
+  margin-top: 14px;
+}
+
 .navegador {
   width: min(720px, 100%);
   margin-inline: auto;
@@ -1226,6 +1234,35 @@ ul, ol { margin: 0; padding: 0; }
 .panel__nav--activo {
   background: rgba(34, 197, 94, 0.16);
   color: var(--verde-vivo);
+}
+
+.panel__bmc {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: left;
+  color: var(--verde-vivo);
+  background: rgba(34, 197, 94, 0.16);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  border-radius: 7px;
+  padding: 7px 9px;
+  cursor: pointer;
+  transition: background-color var(--transicion), color var(--transicion),
+    border-color var(--transicion);
+}
+
+.panel__bmc:hover {
+  background: rgba(34, 197, 94, 0.3);
+  border-color: var(--verde-vivo);
+}
+
+.panel__bmc:focus-visible {
+  outline: 3px solid var(--verde-vivo);
+  outline-offset: 2px;
 }
 
 .panel {
@@ -1357,6 +1394,168 @@ ul, ol { margin: 0; padding: 0; }
 .panel__hora {
   grid-area: hora;
   font-size: 0.62rem;
+  color: var(--gris-claro);
+}
+
+/* ---------- 8c. Modal Business Model Canvas ---------- */
+.bmc {
+  width: min(960px, 94vw);
+  max-height: 88vh;
+  padding: 0;
+  border: none;
+  border-radius: 22px;
+  background: var(--arena);
+  color: var(--tinta);
+  box-shadow: var(--sombra-alta, 0 30px 80px rgba(0, 0, 0, 0.45));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.bmc::backdrop {
+  background: rgba(12, 10, 9, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.bmc[open] {
+  animation: bmcEntrada 0.28s ease-out;
+}
+
+@keyframes bmcEntrada {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bmc__cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px 16px;
+  background: var(--tinta);
+  color: var(--blanco);
+}
+
+.bmc__cabecera h2 {
+  margin-top: 8px;
+  font-family: var(--fuente-display);
+  font-size: clamp(1.05rem, 3.2vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--blanco);
+}
+
+.bmc__cabecera .etiqueta { margin-bottom: 0; }
+
+.bmc__cerrar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--blanco);
+  cursor: pointer;
+  transition: background-color var(--transicion), border-color var(--transicion),
+    transform var(--transicion);
+}
+
+.bmc__cerrar:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--blanco);
+  transform: rotate(90deg);
+}
+
+.bmc__cerrar:focus-visible {
+  outline: 3px solid var(--verde-vivo);
+  outline-offset: 2px;
+}
+
+.bmc__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  padding: 18px 18px 8px;
+}
+
+.bmc__bloque {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.bmc__bloque h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-family: var(--fuente-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--verde-oscuro);
+}
+
+.bmc__bloque h3 span {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: var(--verde-menta, #d1fae5);
+  color: var(--verde-oscuro);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.bmc__bloque ul {
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+
+.bmc__bloque li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--gris, #57534e);
+}
+
+.bmc__bloque li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--verde-vivo);
+}
+
+.bmc__bloque--valor {
+  background: var(--tinta);
+  border-color: var(--tinta);
+}
+
+.bmc__bloque--valor h3 { color: var(--verde-vivo); }
+.bmc__bloque--valor h3 span {
+  background: rgba(34, 197, 94, 0.2);
+  color: var(--verde-vivo);
+}
+.bmc__bloque--valor li { color: rgba(255, 255, 255, 0.85); }
+
+.bmc__nota {
+  padding: 6px 22px 20px;
+  font-size: 0.78rem;
   color: var(--gris-claro);
 }
 
@@ -1868,6 +2067,8 @@ ul, ol { margin: 0; padding: 0; }
   .hero__datos li { padding: 12px 18px; }
   .demoApp { padding: 40px 34px; }
   .demoWeb { padding: 40px 34px; }
+  .bmc__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nav__cta--bmc { display: inline-flex; }
   .panel__kpi { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .panel__fila {
     grid-template-columns: 56px minmax(0, 1fr) auto auto;
@@ -1896,6 +2097,7 @@ ul, ol { margin: 0; padding: 0; }
   .pasos { grid-template-columns: repeat(3, 1fr); gap: 34px; }
   .paso { padding-top: 34px; }
   .cta { grid-template-columns: 1.05fr 1fr; gap: 44px; padding: 48px 44px; align-items: center; }
+  .bmc__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 /* Escritorio */
@@ -1923,6 +2125,7 @@ ul, ol { margin: 0; padding: 0; }
   .nav__cta { padding: 13px 22px; font-size: 0.95rem; }
   .nav__ctaCorta { display: none; }
   .nav__ctaLarga { display: inline; }
+  .nav__cta--bmc .nav__ctaCorta { display: inline; }
 
   .hero {
     padding-top: calc(var(--nav-alto) + 74px);
@@ -1948,6 +2151,11 @@ ul, ol { margin: 0; padding: 0; }
 /* Móviles: el CTA del formulario cabe en una sola línea */
 @media (max-width: 779px) {
   .btn--bloque { padding-inline: 16px; font-size: 0.96rem; }
+}
+
+/* Móvil: la barra lateral del panel está oculta, se muestra el acceso al BMC */
+@media (max-width: 639px) {
+  .demoWeb__bmc { display: inline-flex; }
 }
 
 /* Móviles muy pequeños */
