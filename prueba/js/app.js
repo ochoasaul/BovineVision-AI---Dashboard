@@ -88,12 +88,14 @@
     $("#sidebar").classList.add("sidebar--open");
     $("#backdrop").hidden = false;
     $("#menuToggle").setAttribute("aria-expanded", "true");
+    document.body.classList.add("menuOpen");
   }
 
   function closeSidebar() {
     $("#sidebar").classList.remove("sidebar--open");
     $("#backdrop").hidden = true;
     $("#menuToggle").setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menuOpen");
   }
 
   /* ---------- Dropdowns ---------- */
