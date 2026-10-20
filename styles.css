@@ -2287,3 +2287,18 @@ ul, ol { margin: 0; padding: 0; }
   [data-reveal] { opacity: 1; transform: none; }
 }
 
+/* ---------- 15. CTA "Ver Dashboard" (mockup en /prueba) ---------- */
+.nav__cta--dash {
+  white-space: nowrap;
+  padding-inline: 14px;
+  flex: 0 0 auto;
+}
+
+/* Etiqueta corta "Panel" en todos los tamaños para no desbordar el navbar */
+.nav__cta--dash .nav__ctaCorta { display: inline; }
+.nav__cta--dash .nav__ctaLarga { display: none; }
+
+/* Ajustes mínimos de densidad para que quepan los tres CTAs sin partir el navbar */
+.nav__interior { gap: 12px; }
+.nav__link { padding-inline: 4px; }
+.logo__texto { font-size: 1.12rem; white-space: nowrap; }

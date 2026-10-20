@@ -1,0 +1,148 @@
+{
+  "brand": "BovineVision AI",
+  "user": {
+    "name": "Ing. Mariana Rojas",
+    "role": "Supervisora de Campo",
+    "initials": "MR",
+    "avatarColor": "#2FD18A"
+  },
+  "nav": [
+    { "id": "dashboard", "label": "Dashboard", "icon": "layoutDashboard" },
+    { "id": "corrales", "label": "Corrales", "icon": "fence" },
+    { "id": "alertas", "label": "Alertas", "icon": "triangleAlert" },
+    { "id": "camaras", "label": "Cámaras", "icon": "cctv" },
+    { "id": "config", "label": "Configuración", "icon": "settings" }
+  ],
+  "demoNotice": "Datos simulados de demostración — sin backend, sensores ni cámaras reales.",
+  "dashboard": {
+    "totalCabezas": 1450,
+    "nodosActivos": 8,
+    "nodosTotales": 8,
+    "alertasActivas": 2,
+    "conectividad": 94
+  },
+  "camera": {
+    "name": "Corral 04",
+    "title": "Video en Vivo - Corral 04",
+    "video": "videos/corral-04.mp4",
+    "poster": "../assets/img/hero-poster.jpg",
+    "timestamp": "19:42:01",
+    "mode": "Vigilancia Nocturna AI",
+    "status": "En vivo",
+    "detections": [
+      { "id": "cow-01", "label": "IR", "x": 12, "y": 46, "width": 10, "height": 17, "color": "blue" },
+      { "id": "cow-02", "label": "IR", "x": 34, "y": 50, "width": 8, "height": 14, "color": "green" },
+      { "id": "cow-03", "label": "IR", "x": 58, "y": 44, "width": 13, "height": 19, "color": "green" },
+      { "id": "cow-04", "label": "IR", "x": 78, "y": 49, "width": 9, "height": 15, "color": "blue" }
+    ]
+  },
+  "alerts": [
+    {
+      "id": "alt-01",
+      "level": "critical",
+      "title": "Posible Postración Detectada",
+      "description": "Corral 04 - hace 2 min (Clip <50KB enviado)",
+      "time": "hace 2 min",
+      "corral": "Corral 04",
+      "thumbnail": "../assets/img/alerta-01.jpg"
+    },
+    {
+      "id": "alt-02",
+      "level": "warning",
+      "title": "Actividad Anómala en el Bebedero",
+      "description": "Corral 01 - hace 18 min",
+      "time": "hace 18 min",
+      "corral": "Corral 01",
+      "thumbnail": "../assets/img/alerta-02.jpg"
+    },
+    {
+      "id": "alt-03",
+      "level": "warning",
+      "title": "Agregación Inusual de Ganado",
+      "description": "Corral 07 - hace 41 min",
+      "time": "hace 41 min",
+      "corral": "Corral 07",
+      "thumbnail": "../assets/img/alerta-03.jpg"
+    },
+    {
+      "id": "alt-04",
+      "level": "ok",
+      "title": "Conteo de Cabezas Completado",
+      "description": "Corral 03 - hace 1 h (1.450 cabezas verificadas)",
+      "time": "hace 1 h",
+      "corral": "Corral 03",
+      "thumbnail": "../assets/img/alerta-04.jpg"
+    },
+    {
+      "id": "alt-05",
+      "level": "ok",
+      "title": "Nodo N-06 Reconectado",
+      "description": "Corral 06 - hace 2 h (señal restablecida)",
+      "time": "hace 2 h",
+      "corral": "Corral 06",
+      "thumbnail": "../assets/img/alerta-02.jpg"
+    }
+  ],
+  "herdStatus": [
+    { "name": "Resting", "value": 72, "color": "#2FD18A" },
+    { "name": "Active", "value": 23, "color": "#469DE8" },
+    { "name": "Anomalous", "value": 5, "color": "#FF624B" }
+  ],
+  "activity": {
+    "title": "Actividad Reciente (Edge AI)",
+    "subtitle": "Live tiempo unido",
+    "statusLabel": "Mertio",
+    "yTicks": [0, 500, 1000],
+    "points": [120, 260, 180, 340, 290, 410, 360, 480, 430, 520, 470, 560, 510, 620, 570, 640, 590, 680, 730, 650, 790, 850, 800, 930]
+  },
+  "lazyLoading": {
+    "title": "Registro de Carga Diferida (Lazy Loading)",
+    "subtitle": "Tracking y envían estados de pequeños dato over",
+    "items": [
+      { "id": "lazy-01", "label": "Ceua (1i0)", "detail": "2G/3G", "percent": 76, "tone": "green", "status": "ok" },
+      { "id": "lazy-02", "label": "Enviaruno datos estados", "detail": "1", "percent": 42, "tone": "blue", "status": "pending" },
+      { "id": "lazy-03", "label": "Paqueño paquez enviados", "detail": "0", "percent": 8, "tone": "blue", "status": "idle" },
+      { "id": "lazy-04", "label": "Clip video diferido", "detail": "50KB", "percent": 61, "tone": "green", "status": "ok" },
+      { "id": "lazy-05", "label": "Sincroniza corral 07", "detail": "2G", "percent": 89, "tone": "green", "status": "ok" },
+      { "id": "lazy-06", "label": "Cola de eventos IA", "detail": "12", "percent": 34, "tone": "blue", "status": "pending" }
+    ]
+  },
+  "corrales": [
+    { "id": "c01", "name": "Corral 01", "cabezas": 210, "node": "N-01", "state": "normal", "connectivity": 96, "mode": "Diurno" },
+    { "id": "c03", "name": "Corral 03", "cabezas": 185, "node": "N-03", "state": "normal", "connectivity": 91, "mode": "Diurno" },
+    { "id": "c04", "name": "Corral 04", "cabezas": 240, "node": "N-04", "state": "alerta", "connectivity": 88, "mode": "Nocturno IR" },
+    { "id": "c06", "name": "Corral 06", "cabezas": 195, "node": "N-06", "state": "normal", "connectivity": 99, "mode": "Diurno" },
+    { "id": "c07", "name": "Corral 07", "cabezas": 230, "node": "N-07", "state": "advertencia", "connectivity": 78, "mode": "Nocturno IR" },
+    { "id": "c08", "name": "Corral 08", "cabezas": 190, "node": "N-08", "state": "normal", "connectivity": 94, "mode": "Diurno" },
+    { "id": "c10", "name": "Corral 10", "cabezas": 200, "node": "N-05", "state": "normal", "connectivity": 92, "mode": "Diurno" }
+  ],
+  "cameras": [
+    { "id": "cam-01", "name": "Cámara 01", "corral": "Corral 01", "state": "online", "resolution": "1080p", "mode": "Diurno" },
+    { "id": "cam-02", "name": "Cámara 02", "corral": "Corral 03", "state": "online", "resolution": "1080p", "mode": "Diurno" },
+    { "id": "cam-03", "name": "Cámara 03", "corral": "Corral 04", "state": "online", "resolution": "720p", "mode": "Nocturno IR" },
+    { "id": "cam-04", "name": "Cámara 04", "corral": "Corral 06", "state": "online", "resolution": "1080p", "mode": "Diurno" },
+    { "id": "cam-05", "name": "Cámara 05", "corral": "Corral 07", "state": "degraded", "resolution": "720p", "mode": "Nocturno IR" },
+    { "id": "cam-06", "name": "Cámara 06", "corral": "Corral 08", "state": "online", "resolution": "1080p", "mode": "Diurno" },
+    { "id": "cam-07", "name": "Cámara 07", "corral": "Corral 10", "state": "online", "resolution": "720p", "mode": "Diurno" },
+    { "id": "cam-08", "name": "Cámara 08", "corral": "Corral 04", "state": "online", "resolution": "720p", "mode": "Nocturno IR" }
+  ],
+  "nodes": [
+    { "id": "N-01", "state": "online", "battery": 92, "signal": "2G" },
+    { "id": "N-02", "state": "online", "battery": 87, "signal": "3G" },
+    { "id": "N-03", "state": "online", "battery": 78, "signal": "2G" },
+    { "id": "N-04", "state": "online", "battery": 95, "signal": "3G" },
+    { "id": "N-05", "state": "online", "battery": 66, "signal": "2G" },
+    { "id": "N-06", "state": "online", "battery": 81, "signal": "2G" },
+    { "id": "N-07", "state": "online", "battery": 59, "signal": "3G" },
+    { "id": "N-08", "state": "online", "battery": 90, "signal": "2G" }
+  ],
+  "settings": {
+    "toggles": [
+      { "id": "nightMode", "label": "Vigilancia Nocturna AI", "description": "Activa detección infrarroja en corrales configurados", "enabled": true },
+      { "id": "pushAlerts", "label": "Notificaciones push", "description": "Alertas críticas al teléfono de supervisores", "enabled": true },
+      { "id": "lazyUpload", "label": "Carga diferida de clips", "description": "Envía clips pequeños cuando hay conectividad 2G/3G", "enabled": true },
+      { "id": "autoCount", "label": "Conteo automático de cabezas", "description": "Recuento periódico mediante visión artificial", "enabled": true },
+      { "id": "demoWatermark", "label": "Marca de datos de demostración", "description": "Indica que las métricas son simuladas", "enabled": true }
+    ]
+  }
+}

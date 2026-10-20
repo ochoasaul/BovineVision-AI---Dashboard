@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BovineVision AI — Dashboard (Mockup)</title>
+  <meta name="description" content="Mockup frontend del panel de monitoreo BovineVision AI con datos simulados." />
+  <meta name="theme-color" content="#111827" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111827'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%232FD18A' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%232FD18A'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="app" id="app">
+    <div class="backdrop" id="backdrop" hidden></div>
+
+    <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+      <div class="sidebar__brand">
+        <span class="sidebar__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="34" height="34"><rect width="32" height="32" rx="9" fill="#254C4B"/><circle cx="16" cy="16" r="7.5" fill="none" stroke="#2FD18A" stroke-width="2.2"/><circle cx="16" cy="16" r="2.6" fill="#2FD18A"/><path d="M16 5v3M16 24v3M5 16h3M24 16h3" stroke="#2FD18A" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <span class="sidebar__brandText">BovineVision <em>AI</em></span>
+        <button type="button" class="sidebar__close" id="sidebarClose" aria-label="Cerrar menú"></button>
+      </div>
+
+      <nav class="sidebar__nav" id="sidebarNav"></nav>
+
+      <div class="sidebar__footer">
+        <p class="sidebar__demoNote" id="sidebarDemoNote">Datos simulados · demo</p>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <button type="button" class="topbar__hamburger" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar">
+          <span></span><span></span><span></span>
+        </button>
+
+        <h1 class="topbar__title" id="pageTitle">Dashboard</h1>
+
+        <div class="topbar__actions">
+          <div class="dropdown" id="notifDropdown">
+            <button type="button" class="iconBtn" id="notifBtn" aria-label="Notificaciones" aria-haspopup="true" aria-expanded="false">
+              <span data-icon="bell"></span>
+              <span class="iconBtn__dot" id="notifDot"></span>
+            </button>
+            <div class="dropdown__panel dropdown__panel--notif" role="menu" hidden>
+              <p class="dropdown__header">Notificaciones (demo)</p>
+              <ul class="notifList" id="notifList"></ul>
+            </div>
+          </div>
+
+          <div class="dropdown" id="userDropdown">
+            <button type="button" class="avatarBtn" id="userBtn" aria-haspopup="true" aria-expanded="false">
+              <span class="avatar" id="userAvatar">MR</span>
+              <span class="avatarBtn__name" id="userName">Mariana Rojas</span>
+              <span data-icon="chevronDown"></span>
+            </button>
+            <div class="dropdown__panel dropdown__panel--user" role="menu" hidden>
+              <div class="userCard">
+                <span class="avatar avatar--lg" id="userAvatarLg">MR</span>
+                <div>
+                  <p class="userCard__name" id="userNameLg">Mariana Rojas</p>
+                  <p class="userCard__role" id="userRole">Supervisora de Campo</p>
+                </div>
+              </div>
+              <button type="button" class="dropdown__item" role="menuitem" data-demo-action="perfil">Mi perfil</button>
+              <button type="button" class="dropdown__item" role="menuitem" data-demo-action="equipo">Equipo</button>
+              <a class="dropdown__item" href="../" role="menuitem">Volver a la landing</a>
+              <button type="button" class="dropdown__item dropdown__item--danger" role="menuitem" data-demo-action="salir">Cerrar sesión (demo)</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content" id="content">
+        <!-- ============ VISTA: DASHBOARD ============ -->
+        <section class="view" id="view-dashboard" data-view="dashboard">
+          <p class="demoBanner" id="demoBanner"></p>
+
+          <div class="statsGrid" id="statsGrid"></div>
+
+          <div class="grid grid--main">
+            <div class="grid__col grid__col--58">
+              <section class="card" id="cameraPanel">
+                <header class="card__head">
+                  <div class="card__headLeft">
+                    <h2 class="card__title" id="cameraTitle">Video en Vivo - Corral 04</h2>
+                    <span class="statusPill statusPill--live"><span class="statusPill__dot"></span><span id="cameraStatus">En vivo</span></span>
+                  </div>
+                  <button type="button" class="dotsBtn" aria-label="Más opciones" data-demo-menu>
+                    <span></span><span></span><span></span>
+                  </button>
+                </header>
+                <div class="videoWrap" id="videoWrap">
+                  <video id="corralVideo" class="videoWrap__video" autoplay muted loop playsinline preload="metadata"></video>
+                  <div class="videoFallback" id="videoFallback" hidden>
+                    <span data-icon="cctv"></span>
+                    <p>Vista previa del corral</p>
+                    <small>Coloca tu archivo en <code>prueba/videos/corral-04.mp4</code></small>
+                  </div>
+                  <div class="videoOverlay">
+                    <div class="videoOverlay__chip" id="videoChip">CORRAL 04 - 19:42:01</div>
+                    <div class="videoOverlay__mode videoOverlay__mode--top"><span data-icon="moon"></span><span id="modeTop">Vigilancia Nocturna AI</span></div>
+                    <div class="detections" id="detections"></div>
+                    <div class="videoOverlay__mode videoOverlay__mode--bottom"><span data-icon="moon"></span><span id="modeBottom">Vigilancia Nocturna AI</span></div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="card" id="activityPanel">
+                <header class="card__head">
+                  <div class="card__headLeft">
+                    <h2 class="card__title">Actividad Reciente (Edge AI)</h2>
+                    <p class="card__subtitle" id="activitySubtitle">Live tiempo unido</p>
+                  </div>
+                  <div class="card__headRight">
+                    <span class="statusPill statusPill--live"><span class="statusPill__dot"></span><span id="activityStatus">Mertio</span></span>
+                    <button type="button" class="dotsBtn" aria-label="Más opciones" data-demo-menu>
+                      <span></span><span></span><span></span>
+                    </button>
+                  </div>
+                </header>
+                <div class="chartWrap" id="activityChart"></div>
+              </section>
+            </div>
+
+            <div class="grid__col grid__col--42">
+              <section class="card card--alerts" id="alertsPanel">
+                <header class="card__head">
+                  <div class="card__headLeft">
+                    <h2 class="card__title">Alertas en Tiempo Real</h2>
+                    <p class="card__subtitle">Crítico del estados notificadores</p>
+                  </div>
+                  <button type="button" class="dotsBtn" aria-label="Más opciones" data-demo-menu>
+                    <span></span><span></span><span></span>
+                  </button>
+                </header>
+                <div class="scrollArea" id="alertsList"></div>
+              </section>
+
+              <section class="card" id="herdPanel">
+                <header class="card__head">
+                  <h2 class="card__title">Estado del Hato</h2>
+                  <button type="button" class="dotsBtn" aria-label="Más opciones" data-demo-menu>
+                    <span></span><span></span><span></span>
+                  </button>
+                </header>
+                <div class="herd" id="herdChart"></div>
+              </section>
+
+              <section class="card" id="lazyPanel">
+                <header class="card__head">
+                  <div class="card__headLeft">
+                    <h2 class="card__title">Registro de Carga Diferida (Lazy Loading)</h2>
+                    <p class="card__subtitle">Tracking y envían estados de pequeños dato over</p>
+                  </div>
+                  <button type="button" class="dotsBtn" aria-label="Más opciones" data-demo-menu>
+                    <span></span><span></span><span></span>
+                  </button>
+                </header>
+                <div class="scrollArea scrollArea--tall" id="lazyList"></div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ VISTA: CORRALES ============ -->
+        <section class="view" id="view-corrales" data-view="corrales" hidden>
+          <p class="demoBanner"></p>
+          <div class="sectionHead">
+            <h2 class="sectionHead__title">Corrales</h2>
+            <p class="sectionHead__sub">Estado simulado de los corrales monitoreados</p>
+          </div>
+          <div class="corralGrid" id="corralGrid"></div>
+        </section>
+
+        <!-- ============ VISTA: ALERTAS ============ -->
+        <section class="view" id="view-alertas" data-view="alertas" hidden>
+          <p class="demoBanner"></p>
+          <div class="sectionHead">
+            <h2 class="sectionHead__title">Alertas</h2>
+            <p class="sectionHead__sub">Historial de notificaciones del sistema (demo)</p>
+          </div>
+          <div class="card card--pad">
+            <div class="alertFilters" id="alertFilters">
+              <button type="button" class="chip chip--active" data-filter="all">Todas</button>
+              <button type="button" class="chip" data-filter="critical">Críticas</button>
+              <button type="button" class="chip" data-filter="warning">Advertencias</button>
+              <button type="button" class="chip" data-filter="ok">Informativas</button>
+            </div>
+            <div class="alertsFull" id="alertsFull"></div>
+          </div>
+        </section>
+
+        <!-- ============ VISTA: CÁMARAS ============ -->
+        <section class="view" id="view-camaras" data-view="camaras" hidden>
+          <p class="demoBanner"></p>
+          <div class="sectionHead">
+            <h2 class="sectionHead__title">Cámaras</h2>
+            <p class="sectionHead__sub">Inventario simulado de cámaras de campo</p>
+          </div>
+          <div class="cameraGrid" id="cameraGrid"></div>
+        </section>
+
+        <!-- ============ VISTA: CONFIGURACIÓN ============ -->
+        <section class="view" id="view-config" data-view="config" hidden>
+          <p class="demoBanner"></p>
+          <div class="sectionHead">
+            <h2 class="sectionHead__title">Configuración</h2>
+            <p class="sectionHead__sub">Preferencias locales del mockup (sin persistencia)</p>
+          </div>
+          <div class="grid grid--config">
+            <div class="card card--pad">
+              <h3 class="card__title card__title--sm">Preferencias</h3>
+              <div class="settingsList" id="settingsList"></div>
+            </div>
+            <div class="card card--pad">
+              <h3 class="card__title card__title--sm">Nodos de campo</h3>
+              <div class="nodeList" id="nodeList"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/icons.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

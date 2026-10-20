@@ -18,12 +18,18 @@ projecto_materia_MOd3/
 ├── styles.css        → estilos mobile-first con variables CSS
 ├── app.js            → interactividad (menú, scroll, contadores, formulario, video)
 ├── README.md         → este archivo
-└── assets/
-    ├── logo/logo.jpeg           → logo de la marca (vaca con circuitos) en el navbar
-    ├── video/corral-03.mp4      → loop del corral para la tarjeta "En vivo" (720p, ~3,6 MB)
-    └── img/
-        ├── hero-poster.jpg      → foto de respaldo del video (~96 KB)
-        └── alerta-01…04.jpg     → fotos de alerta del mockup de celular (22–60 KB c/u)
+├── assets/
+│   ├── logo/logo.jpeg           → logo de la marca (vaca con circuitos) en el navbar
+│   ├── video/corral-03.mp4      → loop del corral para la tarjeta "En vivo" (720p, ~3,6 MB)
+│   └── img/
+│       ├── hero-poster.jpg      → foto de respaldo del video (~96 KB)
+│       └── alerta-01…04.jpg     → fotos de alerta del mockup de celular (22–60 KB c/u)
+└── prueba/                      → mockup del dashboard (ruta /prueba/)
+    ├── index.html               → shell: sidebar + topbar + vistas
+    ├── css/dashboard.css        → paleta oscura del panel + responsive
+    ├── js/                      → icons, data (fetch JSON), charts (SVG), components, app
+    ├── data/dashboard.json      → TODOS los datos simulados del panel
+    └── videos/corral-04.mp4     → video del panel de vigilancia
 ```
 
 ---
@@ -40,12 +46,41 @@ python3 -m http.server 8080
 ```
 Luego entra a 👉 [http://localhost:8080](http://localhost:8080)
 
+El mockup del dashboard se abre en 👉 [http://localhost:8080/prueba/](http://localhost:8080/prueba/)
+(con el botón **Panel** del navbar o escribiendo la URL).
+
+---
+
+## 🖥️ Mockup del dashboard (`/prueba/`)
+
+Réplica visual del panel **BovineVision AI** (monitoreo de ganado con IA) implementada como
+**mockup frontend autónomo**: sin backend, base de datos, APIs ni WebSockets. Todos los datos
+(stats, alertas, corrales, cámaras, gráficas) provienen de `prueba/data/dashboard.json` y se
+cargan con `fetch` (con fallback local si no hay servidor).
+
+| Función | Implementación |
+|---|---|
+| Sidebar fijo + 5 vistas (Dashboard, Corrales, Alertas, Cámaras, Configuración) | Selección activa + hamburger en móvil |
+| Stat cards (1.450 cabezas · 8/8 nodos · 2 alertas · 94%) | Render desde JSON, alerta destacada en rojo |
+| Panel de video "Corral 04" | Video local en loop + overlays CSS: chip de hora (reloj simulado), cajas de detección IR, badge "Vigilancia Nocturna AI" |
+| Alertas en tiempo real | Lista con scroll interno, primera alerta crítica destacada, miniaturas locales |
+| Estado del Hato (dona 72/23/5) | SVG nativo con leyenda, sin librerías externas |
+| Actividad Edge AI | Gráfica de área/lineal en SVG (ejes 0/500/1000) |
+| Registro de carga diferida | Barras de progreso con estados y scroll interno |
+| Notificaciones, dropdown de usuario, menús ⋯, filtros, toggles | Interacciones demo con toasts (sin persistencia) |
+| Responsive | Tablet: grids de 2 columnas · Móvil: sidebar off-canvas + tarjetas apiladas |
+
+> **Nota:** el video de `/prueba/videos/corral-04.mp4` es una copia de `assets/video/corral-03.mp4`.
+> Para cambiarlo, basta reemplazar el archivo con ese nombre. Si se elimina, el panel muestra
+> un placeholder visual en lugar de una cámara falsa.
+
 ---
 
 ## 🧭 Secciones de la página
 
 1. **Navbar** fija con logo de la marca, enlaces a *El Problema*, *Solución*,
-   *Beneficios*, *Cómo Funciona* y botón destacado **Solicitar Demo** (menú hamburguesa en móvil).
+   *Beneficios*, *Cómo Funciona*, botón **Solicitar Demo**, botón **BMC** y botón
+   **Panel** (abre el mockup del dashboard en `/prueba/`; menú hamburguesa en móvil).
 2. **Hero** — titular sobre salvar la rentabilidad, subtítulo con IA + carga diferida,
    CTA primario, **video real del corral** con foto de respaldo y **foto de fondo con fallback**.
 3. **El Problema** — pérdidas por detección manual tardía + contraste microchips vs. monitoreo visual.
