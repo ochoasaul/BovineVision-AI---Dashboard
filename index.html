@@ -764,91 +764,223 @@
       </button>
     </div>
 
-    <div class="bmc__grid">
-      <section class="bmc__bloque">
-        <h3><span>1</span>Socios clave</h3>
-        <ul>
-          <li>Proveedores de cámaras IP y hardware de visión</li>
-          <li>Operadores de conectividad rural (4G/satélite)</li>
-          <li>Veterinarios y zootecnistas de la región</li>
-          <li>Distribuidores de insumos ganaderos</li>
-        </ul>
-      </section>
+    <div class="bmc__tablero">
+      <div class="bmc__principal">
+        <section class="bmc__bloque bmc__bloque--socios">
+          <h3><span>1</span>Socios clave</h3>
+          <div class="bmc__cuerpo">
+            <ol class="bmc__lista">
+              <li>Asociaciones y gremios ganaderos (FEGASACRUZ).</li>
+              <li>Empresas de internet (Entel/Tigo para chips M2M).</li>
+              <li>Proveedores de infraestructura nube (AWS, GCP, Supabase).</li>
+              <li>Importadores mayoristas de hardware especializado (cámaras IP, NVIDIA Jetson, routers 4G).</li>
+              <li>Veterinarios locales (aliados estratégicos que recomienden el sistema).</li>
+              <li>Distribuidores locales de CCTV (repuestos y mantenimiento).</li>
+            </ol>
+          </div>
+        </section>
 
-      <section class="bmc__bloque">
-        <h3><span>2</span>Actividades clave</h3>
-        <ul>
-          <li>Entrenamiento de modelos de visión por computadora</li>
-          <li>Mantenimiento del panel y de la app móvil</li>
-          <li>Instalación y calibración de cámaras en campo</li>
-          <li>Soporte y onboarding al productor</li>
-        </ul>
-      </section>
+        <section class="bmc__bloque bmc__bloque--act">
+          <h3><span>2</span>Actividades clave</h3>
+          <div class="bmc__cuerpo">
+            <ol class="bmc__lista">
+              <li>Desarrollo y entrenamiento continuo del algoritmo de Inteligencia Artificial.</li>
+              <li>Logística e instalación de equipos en los corrales (cuadrillas técnicas en campo).</li>
+              <li>Soporte técnico y mantenimiento preventivo y correctivo 24/7.</li>
+              <li>Venta consultiva B2B (visitas a estancias, demostraciones, ferias). Gestión de contratos de comodato y suscripciones.</li>
+              <li>Capacitación rápida (onboarding) al personal de la estancia.</li>
+              <li>Mejora continua de la app móvil y el dashboard web.</li>
+              <li>Gestión de alianzas estratégicas con gremios, telcos y proveedores.</li>
+            </ol>
+          </div>
+        </section>
 
-      <section class="bmc__bloque bmc__bloque--valor">
-        <h3><span>3</span>Propuesta de valor</h3>
-        <ul>
-          <li>Detección 24/7 de cojeras, caídas y comportamiento anómalo con IA</li>
-          <li>Alertas tempranas que reducen pérdidas por detección manual tardía</li>
-          <li>App ligera con carga diferida, pensada para conexiones débiles del campo</li>
-          <li>Historial y reportes exportables para el veterinario</li>
-        </ul>
-      </section>
+        <section class="bmc__bloque bmc__bloque--rec">
+          <h3><span>3</span>Recursos clave</h3>
+          <div class="bmc__cuerpo">
+            <h4 class="bmc__subtitulo">Físicos</h4>
+            <ol class="bmc__lista">
+              <li>Cámaras IP con visión nocturna infrarroja.</li>
+              <li>Servidores Edge (NVIDIA Jetson / Mini PC Industrial).</li>
+              <li>Routers 4G con SIM M2M.</li>
+              <li>Gabinetes, cableado, paneles solares de respaldo.</li>
+              <li>Taller y bodega de ensamblaje y repuestos.</li>
+            </ol>
+            <h4 class="bmc__subtitulo">Intelectuales</h4>
+            <ol class="bmc__lista">
+              <li>Algoritmo propio de Inteligencia Artificial.</li>
+              <li>Arquitectura de Carga Diferida (Lazy Loading).</li>
+              <li>Marca BovineVision AI registrada.</li>
+              <li>Contratos de comodato.</li>
+              <li>Base de datos de clientes y métricas.</li>
+            </ol>
+            <h4 class="bmc__subtitulo">Humanos</h4>
+            <ol class="bmc__lista">
+              <li>Técnicos de campo (cuadrillas de instalación).</li>
+              <li>Veterinarios y especialistas en bienestar animal.</li>
+              <li>Equipo comercial y de ventas consultivas.</li>
+              <li>Personal de soporte técnico.</li>
+            </ol>
+            <h4 class="bmc__subtitulo">Digitales</h4>
+            <ol class="bmc__lista">
+              <li>Aplicación móvil para el capataz.</li>
+              <li>Dashboard web para el propietario.</li>
+              <li>Plataforma en la nube.</li>
+              <li>Sistema de notificaciones push.</li>
+            </ol>
+          </div>
+        </section>
 
-      <section class="bmc__bloque">
-        <h3><span>4</span>Relaciones con clientes</h3>
-        <ul>
-          <li>Demo y prueba piloto en la estancia</li>
-          <li>Soporte directo por teléfono y WhatsApp</li>
-          <li>Capacitación presencial del equipo de corral</li>
-        </ul>
-      </section>
+        <section class="bmc__bloque bmc__bloque--valor">
+          <h3><span>4</span>Propuesta de valor</h3>
+          <div class="bmc__cuerpo">
+            <h4 class="bmc__subtitulo">Frase principal</h4>
+            <ol class="bmc__lista">
+              <li>Monitoreo 24/7 con IA para detectar enfermedades a tiempo y salvar la rentabilidad del ganadero.</li>
+            </ol>
+            <h4 class="bmc__subtitulo">Elementos diferenciadores</h4>
+            <ol class="bmc__lista">
+              <li>"Cero CAPEX": hardware en comodato, el ganadero no gasta en equipos.</li>
+              <li>Detección no invasiva por visión artificial (sin collares ni chips).</li>
+              <li>Arquitectura de Carga Diferida (Lazy Loading): funciona con internet 2G.</li>
+              <li>Alertas tempranas al celular del capataz en menos de 5 segundos.</li>
+              <li>Reducción de mermas de peso y mortalidad.</li>
+              <li>Control financiero y tranquilidad para el propietario.</li>
+            </ol>
+            <h4 class="bmc__subtitulo">PVM (Mínimo Producto Viable)</h4>
+            <ol class="bmc__lista">
+              <li>Kit: 2 cámaras IP nocturnas.</li>
+              <li>Detecta caídas e inactividad en novillos.</li>
+              <li>Envía clips de 5–10 seg al celular del capataz en &lt;5 seg.</li>
+              <li>Valida precisión del algoritmo, tiempo de alerta y usabilidad.</li>
+            </ol>
+            <h4 class="bmc__subtitulo">Innovación</h4>
+            <p class="bmc__texto">Carga Diferida (Lazy Loading) + Edge AI; funciona con internet 2G.</p>
+          </div>
+        </section>
 
-      <section class="bmc__bloque">
-        <h3><span>5</span>Segmentos de clientes</h3>
-        <ul>
-          <li>Estancias de cebe y engorde en Santa Cruz</li>
-          <li>Medianas y grandes operaciones ganaderas</li>
-          <li>Administradores y veterinarios de establecimiento</li>
-        </ul>
-      </section>
+        <section class="bmc__bloque bmc__bloque--rel">
+          <h3><span>5</span>Relaciones clave</h3>
+          <div class="bmc__cuerpo">
+            <ol class="bmc__lista">
+              <li>Relaciones corporativas B2B a largo plazo (contratos y atención personalizada con inversionistas).</li>
+              <li>Soporte técnico y mantenimiento en campo 24/7.</li>
+              <li>Capacitación rápida (onboarding) para el personal de la estancia.</li>
+              <li>Reportes mensuales de ROI para demostrar valor continuo.</li>
+              <li>Comunidad de capataces (WhatsApp, webinars, encuentros).</li>
+              <li>Up-sells: cámaras térmicas, análisis predictivo, reportes avanzados.</li>
+            </ol>
+          </div>
+        </section>
 
-      <section class="bmc__bloque">
-        <h3><span>6</span>Canales</h3>
-        <ul>
-          <li>Sitio web y solicitud de demo en línea</li>
-          <li>Visita técnica y demostración en campo</li>
-          <li>Redes sociales y referidos entre productores</li>
-        </ul>
-      </section>
+        <section class="bmc__bloque bmc__bloque--can">
+          <h3><span>6</span>Canales</h3>
+          <div class="bmc__cuerpo">
+            <ol class="bmc__lista">
+              <li>Venta B2B directa (visitas a estancias y feedlots).</li>
+              <li>Ferias agropecuarias y eventos gremiales (FEGASACRUZ, Expocruz, Agropecruz).</li>
+              <li>Landing Page y WhatsApp Corporativo.</li>
+              <li>App móvil (Google Play / App Store).</li>
+              <li>Dashboard web.</li>
+              <li>Cuadrillas técnicas de instalación y mantenimiento.</li>
+              <li>Soporte por WhatsApp y llamadas.</li>
+              <li>Marketing de recomendación (boca a boca).</li>
+            </ol>
+          </div>
+        </section>
 
-      <section class="bmc__bloque">
-        <h3><span>7</span>Estructura de costos</h3>
-        <ul>
-          <li>Hardware: cámaras, montaje y conectividad</li>
-          <li>Computación en la nube e inferencia de IA</li>
-          <li>Desarrollo de software y soporte técnico</li>
-        </ul>
-      </section>
+        <section class="bmc__bloque bmc__bloque--seg">
+          <h3><span>7</span>Segmento cliente</h3>
+          <div class="bmc__cuerpo">
+            <ol class="bmc__lista">
+              <li><strong>Arquetipo 1 — Comprador B2B:</strong> Roberto (Propietario / Inversionista).</li>
+              <li>Dueños e inversionistas de centros de engorde (feedlots) en Santa Cruz.</li>
+              <li>Hatos de 500 a 5,000 cabezas.</li>
+              <li>Buscan ROI, control financiero desde la ciudad y cero CAPEX.</li>
+              <li>Deciden la compra y firman el contrato de suscripción.</li>
+              <li><strong>Arquetipo 2 — Usuario Operativo:</strong> Don Pancho (Capataz / Administrador de Campo).</li>
+              <li>Capataces y administradores de campo.</li>
+              <li>Necesitan reducir la mortandad y las mermas de peso en el ganado.</li>
+              <li>Requieren practicidad, alertas claras en el celular y facilidad de uso sin internet rápido.</li>
+              <li>Usan la app móvil y ejecutan la respuesta ante eventos detectados.</li>
+            </ol>
+          </div>
+        </section>
+      </div>
 
-      <section class="bmc__bloque">
-        <h3><span>8</span>Fuentes de ingreso</h3>
-        <ul>
-          <li>Suscripción mensual por cámara o por lote de animales</li>
-          <li>Cargo único de instalación y puesta en marcha</li>
-          <li>Reportes y analítica avanzada (plan premium)</li>
-        </ul>
-      </section>
+      <div class="bmc__inferior">
+        <section class="bmc__bloque bmc__bloque--costos">
+          <h3><span>8</span>Estructura de costos</h3>
+          <div class="bmc__cuerpo">
+            <h4 class="bmc__subtitulo">Costos fijos</h4>
+            <ol class="bmc__lista">
+              <li>Sueldos del equipo (desarrollo, técnicos, ventas, soporte, administración).</li>
+              <li>Pago de servidores en la nube (AWS / Google Cloud / Supabase).</li>
+              <li>Oficina y gastos administrativos (alquiler, servicios básicos, papelería).</li>
+              <li>Marketing y presencia en ferias (FEGASACRUZ, Expocruz, material impreso).</li>
+              <li>Constitución legal y registro de marca (SEPREC, SENAPI, homologación ATT).</li>
+              <li>Asesoría legal y contable continua (contratos de comodato, impuestos, planillas).</li>
+              <li>Seguros (equipos, responsabilidad civil, accidentes de cuadrillas).</li>
+              <li>Licencias de software y herramientas (desarrollo, diseño, gestión, IA).</li>
+              <li>Dominio, hosting y certificados SSL.</li>
+              <li>Depreciación de equipos de trabajo (laptops, celulares, herramientas).</li>
+              <li>Capacitación del equipo (cursos de IA, Edge AI, certificaciones).</li>
+              <li>Fondo de contingencia (5% del presupuesto anual).</li>
+            </ol>
+            <h4 class="bmc__subtitulo">Costos variables</h4>
+            <ol class="bmc__lista">
+              <li>Compra de cámaras e insumos (hardware para comodato: 8 kits).</li>
+              <li>Costo mensual de conectividad de datos (chips M2M y mantenimiento de red local).</li>
+              <li>Sueldos, viáticos y transporte al campo (cuadrillas técnicas).</li>
+              <li>Mantenimiento y reposición de equipos.</li>
+              <li>Instalación y capacitación inicial.</li>
+              <li>Paneles solares y respaldo energético.</li>
+              <li>Logística inversa (retiro de equipos al término de contrato).</li>
+              <li>Soporte post-venta y garantía.</li>
+              <li>Actualización del algoritmo (reentrenamiento de IA).</li>
+              <li>Consultoría externa especializada (veterinarios, IA/ML, trazabilidad).</li>
+              <li>Marketing digital y pauta.</li>
+              <li>Costos financieros (comisiones bancarias, transferencias).</li>
+              <li>Capacitación continua al personal del cliente.</li>
+              <li>Almacenamiento en la nube escalable.</li>
+              <li>Energía eléctrica de equipos en campo.</li>
+              <li>Cumplimiento y auditorías (ATT, SENASA).</li>
+              <li>Costo de adquisición de clientes (CAC).</li>
+              <li>Costo de retención de clientes.</li>
+              <li>Investigación y desarrollo (I+D).</li>
+              <li>Propiedad intelectual (patentes, modelos de utilidad).</li>
+            </ol>
+          </div>
+        </section>
 
-      <section class="bmc__bloque">
-        <h3><span>9</span>Recursos clave</h3>
-        <ul>
-          <li>Modelos de IA entrenados sobre ganado bovino</li>
-          <li>Plataforma web + app con carga diferida</li>
-          <li>Equipo técnico y red de cámaras instaladas</li>
-        </ul>
-      </section>
+        <section class="bmc__bloque bmc__bloque--ingresos">
+          <h3><span>9</span>Fuentes de ingreso</h3>
+          <div class="bmc__cuerpo">
+            <ol class="bmc__lista">
+              <li>Suscripción mensual B2B (SaaS + Hardware).</li>
+              <li>Tarifa plana por corral (planes mensuales, semestrales y anuales).</li>
+              <li>Cuota de instalación y capacitación (pago único).</li>
+              <li>Alquiler de activos (HaaS): cámaras, servidores, routers.</li>
+              <li>Up-sells: cámaras térmicas, análisis predictivo, reportes avanzados.</li>
+              <li>Servicios de consultoría en trazabilidad y bienestar animal.</li>
+            </ol>
+          </div>
+        </section>
+      </div>
     </div>
+
+    <details class="bmc__competidores">
+      <summary>Competidores — contexto adicional</summary>
+      <div class="bmc__cuerpo">
+        <ol class="bmc__lista">
+          <li>Método tradicional (rondas a caballo/inspección visual).</li>
+          <li>Sistemas invasivos caros (collares RFID/Allflex).</li>
+          <li>Cámaras de seguridad comunes (CCTV sin IA).</li>
+          <li>Proveedores de software de gestión ganadera que intenten añadir módulos de cámaras.</li>
+          <li>Competidores internacionales (CattleEye, smaXtec, Connecterra, SenseHub) que no operan en Bolivia con la arquitectura de Carga Diferida ni modelo sin CAPEX.</li>
+        </ol>
+      </div>
+    </details>
 
     <p class="bmc__nota">
       Diagrama académico · nombre de empresa, precios y datos de negocio ficticios.
